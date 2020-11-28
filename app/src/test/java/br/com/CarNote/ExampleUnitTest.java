@@ -1,4 +1,4 @@
-package br.com.possante_alcoolougasolina;
+package br.com.CarNote;
 
 import org.junit.Test;
 

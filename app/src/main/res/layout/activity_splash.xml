@@ -20,25 +20,14 @@
         app:lottie_rawRes="@raw/car" />
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:text="Meu"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="@+id/lottieAnimationView"
-        app:layout_constraintStart_toStartOf="@+id/lottieAnimationView"
-        app:layout_constraintTop_toTopOf="@+id/lottieAnimationView" />
-
-    <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:text="Possante"
+        android:layout_marginTop="48dp"
+        android:text="CarNote"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toTopOf="@+id/lottieAnimationView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
