@@ -1,4 +1,4 @@
-package br.com.possante_alcoolougasolina.activity;
+package br.com.CarNote.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import br.com.possante_alcoolougasolina.R;
+import br.com.CarNote.R;
 
 public class MainActivity extends AppCompatActivity {
     private ImageView buttonAlcoolOuGasolina;

@@ -1,4 +1,4 @@
-package br.com.possante_alcoolougasolina.activity;
+package br.com.CarNote.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
 
-import br.com.possante_alcoolougasolina.R;
+import br.com.CarNote.R;
 
 public class SplashActivity extends AppCompatActivity {
 

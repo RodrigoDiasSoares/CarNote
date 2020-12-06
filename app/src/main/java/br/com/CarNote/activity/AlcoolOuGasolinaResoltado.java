@@ -1,11 +1,11 @@
-package br.com.possante_alcoolougasolina.activity;
+package br.com.CarNote.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.TextView;
 
-import br.com.possante_alcoolougasolina.R;
+import br.com.CarNote.R;
 
 public class AlcoolOuGasolinaResoltado extends AppCompatActivity {
     private TextView resultado;
@@ -16,7 +16,6 @@ public class AlcoolOuGasolinaResoltado extends AppCompatActivity {
         resultado = findViewById(R.id.textViewResultado2);
 
         Bundle bundle = getIntent().getExtras();
-        String valor = bundle.getString("combustivel");
-        resultado.setText(valor);
+        resultado.setText(bundle.getString("combustivel"));
     }
 }

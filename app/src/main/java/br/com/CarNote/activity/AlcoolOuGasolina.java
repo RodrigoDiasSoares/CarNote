@@ -1,4 +1,4 @@
-package br.com.possante_alcoolougasolina.activity;
+package br.com.CarNote.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,7 +13,7 @@ import android.widget.TextView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
-import br.com.possante_alcoolougasolina.R;
+import br.com.CarNote.R;
 
 public class AlcoolOuGasolina extends AppCompatActivity {
     private TextInputEditText editTextGasolina;
@@ -35,6 +35,16 @@ public class AlcoolOuGasolina extends AppCompatActivity {
 
 
         editTextAlcool.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_NEXT) {
+                    editTextGasolina.requestFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
+        editTextGasolina.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (actionId == EditorInfo.IME_ACTION_NEXT) {
@@ -69,16 +79,18 @@ public class AlcoolOuGasolina extends AppCompatActivity {
     public void equação(String precoAlcool, String precoGasolina){
         double valorAlcool = Double.parseDouble(precoAlcool);
         double valorGasolina = Double.parseDouble(precoGasolina);
-        double resultado = valorAlcool / valorGasolina;
-        if(resultado >= 0.7){
+        double valorBase = valorGasolina * 0.7;
 
-            Intent intent = new Intent(getBaseContext(), AlcoolOuGasolinaResoltado.class);
-            intent.putExtra("combustivel","Gasolina");
-            startActivity(intent);
-        }else{
+
+        if(valorAlcool <= valorBase){
 
             Intent intent = new Intent(getBaseContext(), AlcoolOuGasolinaResoltado.class);
             intent.putExtra("combustivel","Álcool");
+            startActivity(intent);
+        }else{
+
+            Intent intent = new Intent(getBaseContext(),AlcoolOuGasolinaResoltado.class);
+            intent.putExtra("combustivel","Gasolina");
             startActivity(intent);
         }
     }
