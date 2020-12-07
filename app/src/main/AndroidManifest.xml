@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="br.com.CarNote">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,18 +12,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PossanteÁlcoolOuGasolina">
-        <activity android:name="br.com.CarNote.activity.MainActivity" />
-        <activity android:name="br.com.CarNote.activity.AlcoolOuGasolinaResoltado"></activity>
-        <activity android:name="br.com.CarNote.activity.AlcoolOuGasolina" />
-        <activity android:name="br.com.CarNote.activity.SplashActivity">
+        <activity android:name=".activity.activitys.ScreenSlideActivity"></activity>
+        <activity android:name=".activity.activitys.SlideAlcoolOuGasolinaActivity" />
+        <activity android:name=".activity.activitys.MainActivity" />
+        <activity android:name=".activity.activitys.AlcoolOuGasolinaResoltado" />
+        <activity android:name=".activity.activitys.AlcoolOuGasolina" />
+        <activity android:name=".activity.activitys.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
-    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

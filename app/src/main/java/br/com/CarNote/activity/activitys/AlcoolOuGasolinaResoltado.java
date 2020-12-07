@@ -1,4 +1,4 @@
-package br.com.CarNote.activity;
+package br.com.CarNote.activity.activitys;
 
 import androidx.appcompat.app.AppCompatActivity;
 

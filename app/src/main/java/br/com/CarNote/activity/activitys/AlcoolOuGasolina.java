@@ -1,13 +1,13 @@
-package br.com.CarNote.activity;
+package br.com.CarNote.activity.activitys;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentPagerAdapter;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
-import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputEditText;
@@ -21,8 +21,9 @@ public class AlcoolOuGasolina extends AppCompatActivity {
     private TextInputLayout textInputLayoutGasolina;
     private TextInputLayout textInputLayoutAcool;
 
-    private Button buttonCalcular;
-    private TextView textViewResultado;
+
+    private FragmentPagerAdapter adapterViewPager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +32,7 @@ public class AlcoolOuGasolina extends AppCompatActivity {
         editTextAlcool = findViewById(R.id.TextInputEditTextAlcool);
         textInputLayoutAcool = findViewById(R.id.textInputLayoutAlcool);
         textInputLayoutGasolina = findViewById(R.id.textInputLayoutGasolina);
-        buttonCalcular = findViewById(R.id.buttonCalcular);
+
 
 
         editTextAlcool.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -130,5 +131,6 @@ public class AlcoolOuGasolina extends AppCompatActivity {
 
         return camposValidos;
     }
+
 
 }
