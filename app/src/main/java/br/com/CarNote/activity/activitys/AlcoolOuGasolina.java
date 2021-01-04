@@ -28,12 +28,12 @@ public class AlcoolOuGasolina extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alcool_ou_gasolina);
-        editTextGasolina = findViewById(R.id.TextInputEditTextGasolina);
-        editTextAlcool = findViewById(R.id.TextInputEditTextAlcool);
-        textInputLayoutAcool = findViewById(R.id.textInputLayoutAlcool);
-        textInputLayoutGasolina = findViewById(R.id.textInputLayoutGasolina);
+        editTextGasolina = findViewById(R.id.TextInputEditTextKm);
+        editTextAlcool = findViewById(R.id.TextInputEditTextLitros);
+        textInputLayoutAcool = findViewById(R.id.textInputLayoutKm);
+        textInputLayoutGasolina = findViewById(R.id.textInputLayoutLitros);
 
-
+        editTextAlcool.requestFocus();
 
         editTextAlcool.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
