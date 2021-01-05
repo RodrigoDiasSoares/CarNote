@@ -12,7 +12,7 @@ public class ConsumoPorLitroResoltado extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_alcool_ou_gasolina_resoltado);
+        setContentView(R.layout.activity_consumo_por_litro_resoltado);
         resultado = findViewById(R.id.textViewResultado2);
 
         Bundle bundle = getIntent().getExtras();
