@@ -8,49 +8,33 @@
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/lottieAnimationView2"
-        android:layout_width="99dp"
-        android:layout_height="88dp"
-        android:layout_marginTop="72dp"
+        android:layout_width="208dp"
+        android:layout_height="164dp"
+        android:layout_marginTop="125dp"
         android:contentDescription="@string/app_name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.948"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline10"
         app:layout_constraintTop_toTopOf="@+id/guideline4"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
-        app:lottie_rawRes="@raw/goldcoin" />
-
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/lottieAnimationView5"
-        android:layout_width="364dp"
-        android:layout_height="336dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline5"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"
-        app:lottie_rawRes="@raw/car" />
+        app:lottie_rawRes="@raw/fuel" />
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/lottieAnimationView4"
-        android:layout_width="99dp"
-        android:layout_height="88dp"
+        android:layout_width="408dp"
+        android:layout_height="365dp"
         android:layout_marginTop="4dp"
         android:contentDescription="@string/app_name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.051"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline9"
         app:layout_constraintTop_toTopOf="@+id/guideline4"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
-        app:lottie_rawRes="@raw/goldcoin" />
+        app:lottie_rawRes="@raw/fuel" />
 
     <TextView
         android:id="@+id/textViewResultado2"
         android:layout_width="282dp"
         android:layout_height="179dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="104dp"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/resultado2"
         android:textSize="50sp"
@@ -72,5 +56,19 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="74dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="114dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="233dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

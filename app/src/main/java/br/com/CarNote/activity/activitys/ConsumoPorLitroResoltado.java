@@ -17,6 +17,6 @@ public class ConsumoPorLitroResoltado extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
 
-        resultado.setText(String.valueOf(bundle.getDouble("resultado")));
+        resultado.setText(String.valueOf(bundle.getDouble("resultado"))+" Km \npor litro");
     }
 }
