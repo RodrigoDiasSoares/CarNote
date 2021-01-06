@@ -34,7 +34,7 @@ public class ConsumoPorLitro extends AppCompatActivity {
         editTextLitros = findViewById(R.id.TextInputEditTextLitros);
         textInputLayoutKm = findViewById(R.id.textInputLayoutKm);
         textInputLayoutLitros = findViewById(R.id.textInputLayoutLitros);
-        buttonResultadoKmPorLitro = findViewById(R.id.buttonCalcularConsumo);
+        buttonResultadoKmPorLitro = findViewById(R.id.buttonCalcularAlcoolOuGasolina);
 
 
         editTextLitros.setOnEditorActionListener(new TextView.OnEditorActionListener() {

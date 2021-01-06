@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputEditText;
@@ -20,6 +21,7 @@ public class AlcoolOuGasolina extends AppCompatActivity {
     private TextInputEditText editTextAlcool;
     private TextInputLayout textInputLayoutGasolina;
     private TextInputLayout textInputLayoutAcool;
+    private Button buttonCalcular;
 
 
     private FragmentPagerAdapter adapterViewPager;
@@ -32,8 +34,9 @@ public class AlcoolOuGasolina extends AppCompatActivity {
         editTextAlcool = findViewById(R.id.TextInputEditTextLitros);
         textInputLayoutAcool = findViewById(R.id.textInputLayoutKm);
         textInputLayoutGasolina = findViewById(R.id.textInputLayoutLitros);
+        buttonCalcular = findViewById(R.id.buttonCalcularAlcoolOuGasolina);
 
-        editTextAlcool.requestFocus();
+
 
         editTextAlcool.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
@@ -53,6 +56,12 @@ public class AlcoolOuGasolina extends AppCompatActivity {
                     return true;
                 }
                 return false;
+            }
+        });
+        buttonCalcular.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                calcularPreco(v);
             }
         });
 

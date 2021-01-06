@@ -5,48 +5,68 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
-    android:background="#E3E3E3"
+    android:background="#7D7C7E"
     tools:context="br.com.CarNote.activity.activitys.MainActivity">
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="312dp"
+        android:layout_marginLeft="312dp"
+        android:background="#373243"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buttonAlcoolOuGasolina"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="13dp"
-        android:layout_marginLeft="13dp"
-        android:layout_marginEnd="13dp"
-        android:layout_marginRight="13dp"
+        android:layout_width="400dp"
+        android:layout_height="160dp"
         android:background="@drawable/layout_button"
-        android:text="Álcool \nou \nGasolina"
+        android:gravity="start"
+        android:text="  Álcool \n      ou \nGasolina"
         android:textColor="#294385"
         android:textSize="36sp"
+        android:textStyle="bold"
         app:backgroundTint="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/guideline7"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline13"
         app:layout_constraintTop_toTopOf="@+id/guideline6" />
 
     <Button
         android:id="@+id/buttonConsumoPorLitro"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="13dp"
-        android:layout_marginLeft="13dp"
+        android:layout_width="400dp"
+        android:layout_height="160dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="13dp"
-        android:layout_marginRight="13dp"
         android:background="@drawable/layout_button"
-        android:text="Consumo \npor \nLitro"
+        android:gravity="left"
+        android:text="Consumo \n    por \n   Litro"
         android:textColor="#294385"
         android:textSize="36sp"
+        android:textStyle="bold"
         app:backgroundTint="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/guideline8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline13"
         app:layout_constraintTop_toBottomOf="@+id/buttonAlcoolOuGasolina"
         app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/buttonConsumoPorLitro2"
+        android:layout_width="400dp"
+        android:layout_height="160dp"
+        android:background="@drawable/layout_button"
+        android:gravity="left"
+        android:text="Gastos \n com o\n Carro"
+        android:textColor="#294385"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:backgroundTint="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/guideline12"
+        app:layout_constraintStart_toStartOf="@+id/guideline13"
+        app:layout_constraintTop_toTopOf="@+id/guideline11"
+        app:layout_constraintVertical_bias="0.0" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline6"
@@ -59,6 +79,7 @@
         android:id="@+id/guideline7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@android:color/secondary_text_dark"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="192dp" />
 
@@ -68,5 +89,49 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="375dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="400dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="559dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="40dp" />
+
+
+    ...
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="319dp"
+        android:layout_height="109dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        app:adSize="BANNER"
+        app:adUnitId="ca-app-pub-3940256099942544/6300978111"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline14"
+        tools:ignore="MissingConstraints"></com.google.android.gms.ads.AdView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="574dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,10 +5,13 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.text.DecimalFormat;
+
 import br.com.CarNote.R;
 
 public class ConsumoPorLitroResoltado extends AppCompatActivity {
     private TextView resultado;
+    private DecimalFormat decimalFormat = new DecimalFormat("0.00");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,6 +20,7 @@ public class ConsumoPorLitroResoltado extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
 
-        resultado.setText(String.valueOf(bundle.getDouble("resultado"))+" Km \npor litro");
+        resultado.setText(String.valueOf(decimalFormat.format(bundle.getDouble("resultado")))
+                            +" Km \npor litro");
     }
 }
