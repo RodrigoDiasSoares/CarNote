@@ -6,11 +6,24 @@
     android:layout_height="match_parent"
     tools:context="br.com.CarNote.activity.activitys.AlcoolOuGasolinaResoltado">
 
+    <TextView
+        android:id="@+id/textViewResultado2"
+        android:layout_width="282dp"
+        android:layout_height="179dp"
+        android:layout_marginTop="44dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/resultado2"
+        android:textSize="50sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline4" />
+
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/lottieAnimationView4"
         android:layout_width="408dp"
         android:layout_height="365dp"
-        android:layout_marginTop="104dp"
+        android:layout_marginTop="44dp"
         android:contentDescription="@string/app_name"
         app:layout_constraintStart_toStartOf="@+id/guideline9"
         app:layout_constraintTop_toTopOf="@+id/guideline4"
@@ -22,26 +35,13 @@
         android:id="@+id/lottieAnimationView2"
         android:layout_width="208dp"
         android:layout_height="164dp"
-        android:layout_marginTop="224dp"
+        android:layout_marginTop="164dp"
         android:contentDescription="@string/app_name"
         app:layout_constraintStart_toStartOf="@+id/guideline10"
         app:layout_constraintTop_toTopOf="@+id/guideline4"
         app:lottie_autoPlay="true"
         app:lottie_loop="false"
         app:lottie_rawRes="@raw/fuel" />
-
-    <TextView
-        android:id="@+id/textViewResultado2"
-        android:layout_width="282dp"
-        android:layout_height="179dp"
-        android:layout_marginTop="104dp"
-        android:gravity="center_horizontal|center_vertical"
-        android:text="@string/resultado2"
-        android:textSize="50sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline4" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
@@ -63,5 +63,17 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_begin="233dp" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adViewConsumoPorLitroResultado"
+        android:layout_width="392dp"
+        android:layout_height="238dp"
+        android:layout_marginTop="84dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewResultado2"
+        app:adSize="BANNER"
+        app:adUnitId="ca-app-pub-9067087122803339/8496050467"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

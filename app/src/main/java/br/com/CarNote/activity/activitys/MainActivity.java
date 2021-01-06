@@ -26,13 +26,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         buttonAlcoolOuGasolina = findViewById(R.id.buttonAlcoolOuGasolina);
         buttonConsumoPorLitro = findViewById(R.id.buttonConsumoPorLitro);
+        mAdView = findViewById(R.id.adView);
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
             public void onInitializationComplete(InitializationStatus initializationStatus) {
             }
         });
 
-        mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 

@@ -11,6 +11,11 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentPagerAdapter;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -22,7 +27,7 @@ public class ConsumoPorLitro extends AppCompatActivity {
     private TextInputLayout textInputLayoutLitros;
     private TextInputLayout textInputLayoutKm;
     private Button buttonResultadoKmPorLitro;
-
+    private AdView mAdView;
 
     private FragmentPagerAdapter adapterViewPager;
 
@@ -35,6 +40,16 @@ public class ConsumoPorLitro extends AppCompatActivity {
         textInputLayoutKm = findViewById(R.id.textInputLayoutKm);
         textInputLayoutLitros = findViewById(R.id.textInputLayoutLitros);
         buttonResultadoKmPorLitro = findViewById(R.id.buttonCalcularAlcoolOuGasolina);
+        mAdView = findViewById(R.id.adViewConsumoPorLitro);
+
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
 
         editTextLitros.setOnEditorActionListener(new TextView.OnEditorActionListener() {

@@ -146,4 +146,15 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_begin="16dp" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adViewAlcoolOuGasolina"
+        android:layout_width="350dp"
+        android:layout_height="203dp"
+        android:layout_marginTop="38dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonCalcularAlcoolOuGasolina"
+        app:adSize="BANNER"
+        app:adUnitId="ca-app-pub-9067087122803339/1181678983"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

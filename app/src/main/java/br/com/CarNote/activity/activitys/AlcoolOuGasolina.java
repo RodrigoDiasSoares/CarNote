@@ -11,6 +11,11 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -22,6 +27,7 @@ public class AlcoolOuGasolina extends AppCompatActivity {
     private TextInputLayout textInputLayoutGasolina;
     private TextInputLayout textInputLayoutAcool;
     private Button buttonCalcular;
+    private AdView mAdView;
 
 
     private FragmentPagerAdapter adapterViewPager;
@@ -35,6 +41,15 @@ public class AlcoolOuGasolina extends AppCompatActivity {
         textInputLayoutAcool = findViewById(R.id.textInputLayoutKm);
         textInputLayoutGasolina = findViewById(R.id.textInputLayoutLitros);
         buttonCalcular = findViewById(R.id.buttonCalcularAlcoolOuGasolina);
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+
+        mAdView = findViewById(R.id.adViewAlcoolOuGasolina);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
 
 
