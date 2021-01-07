@@ -26,6 +26,7 @@
         android:layout_height="160dp"
         android:background="@drawable/layout_button"
         android:gravity="start"
+        android:paddingLeft="20dp"
         android:text="  Álcool \n      ou \nGasolina"
         android:textColor="#294385"
         android:textSize="36sp"
@@ -53,7 +54,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/buttonConsumoPorLitro2"
+        android:id="@+id/buttonGastosComOCarro"
         android:layout_width="400dp"
         android:layout_height="160dp"
         android:background="@drawable/layout_button"

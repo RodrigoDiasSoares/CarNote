@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import br.com.CarNote.R;
 
-public class ScreenSlideActivity extends AppCompatActivity {
+public class GastosComOCarroActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_screen_slide);
+        setContentView(R.layout.activity_gastos_com_o_carro);
     }
 }

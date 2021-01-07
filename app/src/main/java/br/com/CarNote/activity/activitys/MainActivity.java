@@ -19,6 +19,7 @@ import br.com.CarNote.R;
 public class MainActivity extends AppCompatActivity {
     private Button buttonAlcoolOuGasolina;
     private Button buttonConsumoPorLitro;
+    private Button buttonGastosComOCaarro;
     private AdView mAdView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         buttonAlcoolOuGasolina = findViewById(R.id.buttonAlcoolOuGasolina);
         buttonConsumoPorLitro = findViewById(R.id.buttonConsumoPorLitro);
+        buttonGastosComOCaarro = findViewById(R.id.buttonGastosComOCarro);
         mAdView = findViewById(R.id.adView);
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
@@ -49,6 +51,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),ConsumoPorLitro.class);
+                startActivity(intent);
+            }
+        });
+        buttonGastosComOCaarro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),GastosComOCarroActivity.class);
                 startActivity(intent);
             }
         });
