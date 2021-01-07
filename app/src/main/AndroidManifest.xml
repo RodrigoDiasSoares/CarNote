@@ -12,7 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PossanteÁlcoolOuGasolina">
-        <activity android:name=".activity.activitys.GastosComOCarroActivity"></activity>
+        <activity
+            android:name=".activity.activitys.GastoComOCarroActivity"
+            android:label="@string/title_activity_gasto_com_o_carro"
+            android:theme="@style/Theme.PossanteÁlcoolOuGasolina.NoActionBar"></activity>
+        <activity android:name=".activity.activitys.EditGastosComOCarroActivity" />
         <activity android:name=".activity.activitys.MainActivity" />
         <activity android:name=".activity.activitys.AlcoolOuGasolinaResoltado" />
         <activity android:name=".activity.activitys.ConsumoPorLitroResoltado" />
