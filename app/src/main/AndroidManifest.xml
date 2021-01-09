@@ -17,11 +17,11 @@
             android:label="@string/title_activity_gasto_com_o_carro"
             android:theme="@style/Theme.PossanteÁlcoolOuGasolina.NoActionBar"></activity>
         <activity android:name=".activity.activitys.EditGastosComOCarroActivity" />
-        <activity android:name=".activity.activitys.MainActivity" />
         <activity android:name=".activity.activitys.AlcoolOuGasolinaResoltado" />
         <activity android:name=".activity.activitys.ConsumoPorLitroResoltado" />
         <activity android:name=".activity.activitys.AlcoolOuGasolina" />
         <activity android:name=".activity.activitys.ConsumoPorLitro" />
+        <activity android:name=".activity.activitys.MainActivity" />
         <activity android:name=".activity.activitys.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
