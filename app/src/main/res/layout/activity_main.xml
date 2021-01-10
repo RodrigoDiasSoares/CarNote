@@ -20,6 +20,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView">
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/CardViewAlcoolOuGasolina"
             android:layout_width="190dp"
             android:layout_height="190dp"
             app:cardElevation="6dp">
@@ -48,6 +49,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/CardViewConsumoPorLitro"
             android:layout_width="190dp"
             android:layout_height="190dp"
             app:cardElevation="6dp">
@@ -104,6 +106,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayoutMenu2">
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/CardViewGastosComCarro"
             android:layout_width="190dp"
             android:layout_height="190dp"
             app:cardElevation="6dp">
