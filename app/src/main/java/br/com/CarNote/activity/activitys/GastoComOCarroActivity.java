@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 
 import br.com.CarNote.R;
+import br.com.CarNote.activity.adapter.AdapterGastos;
 
 public class GastoComOCarroActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
@@ -25,8 +26,12 @@ public class GastoComOCarroActivity extends AppCompatActivity {
         setContentView(R.layout.activity_gasto_com_o_carro);
         recyclerView = findViewById(R.id.recyclerView);
 
+        AdapterGastos adapter = new AdapterGastos();
+
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setAdapter(adapter);
 
 
 

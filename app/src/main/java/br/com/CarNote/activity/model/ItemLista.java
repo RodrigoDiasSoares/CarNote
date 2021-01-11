@@ -1,12 +1,12 @@
 package br.com.CarNote.activity.model;
 
-public class MyModel {
+public class ItemLista {
 
 
 
     private int image;
 
-    public MyModel(int image) {
+    public ItemLista(int image) {
 
 
         this.image = image;
