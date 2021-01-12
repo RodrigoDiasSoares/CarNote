@@ -1,6 +1,8 @@
 package br.com.CarNote.activity.activitys;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -11,6 +13,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 
@@ -18,6 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.CarNote.R;
+import br.com.CarNote.activity.DataBase.DbHelper;
 import br.com.CarNote.activity.adapter.AdapterGastos;
 import br.com.CarNote.activity.model.Gastos;
 
@@ -30,12 +34,12 @@ public class GastoComOCarroActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gasto_com_o_carro);
         recyclerView = findViewById(R.id.recyclerView);
-
-        this.criarGastos();
-
+        DbHelper db = new DbHelper(getApplicationContext());
         AdapterGastos adapter = new AdapterGastos();
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
+
+        
 
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
@@ -51,7 +55,5 @@ public class GastoComOCarroActivity extends AppCompatActivity {
             }
         });
     }
-    public void criarGastos(){
-
-    }
+    
 }
