@@ -14,11 +14,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import br.com.CarNote.R;
 import br.com.CarNote.activity.adapter.AdapterGastos;
+import br.com.CarNote.activity.model.Gastos;
 
 public class GastoComOCarroActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
+    private List<Gastos> listaGastos = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,17 +31,18 @@ public class GastoComOCarroActivity extends AppCompatActivity {
         setContentView(R.layout.activity_gasto_com_o_carro);
         recyclerView = findViewById(R.id.recyclerView);
 
+        this.criarGastos();
+
         AdapterGastos adapter = new AdapterGastos();
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
+
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(adapter);
 
-
-
-
         FloatingActionButton fab = findViewById(R.id.fab);
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -44,5 +50,8 @@ public class GastoComOCarroActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+    public void criarGastos(){
+
     }
 }
