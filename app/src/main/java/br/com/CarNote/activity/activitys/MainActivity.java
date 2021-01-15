@@ -3,6 +3,7 @@ package br.com.CarNote.activity.activitys;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -10,17 +11,19 @@ import androidx.cardview.widget.CardView;
 import br.com.CarNote.R;
 
 public class MainActivity extends AppCompatActivity {
-    private CardView buttonAlcoolOuGasolina;
-    private CardView buttonConsumoPorLitro;
-    private CardView buttonGastosComCarro;
+    private ImageView buttonAlcoolOuGasolina;
+    private ImageView buttonConsumoPorLitro;
+    private ImageView buttonGastosComCarro;
+    private ImageView buttonTutorial;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        buttonAlcoolOuGasolina = findViewById(R.id.CardViewAlcoolOuGasolina);
-        buttonConsumoPorLitro = findViewById(R.id.CardViewConsumoPorLitro);
-        buttonGastosComCarro = findViewById(R.id.CardViewGastosComCarro);
+        buttonAlcoolOuGasolina = findViewById(R.id.btnAlcoolOuGasolina);
+        buttonConsumoPorLitro = findViewById(R.id.btnConsumoPorLitro);
+        buttonGastosComCarro = findViewById(R.id.btnGastosComCarro);
+        buttonTutorial = findViewById(R.id.btnTutorial);
 
         buttonAlcoolOuGasolina.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,5 +48,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-    }
+
+//        buttonTutorial.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(getApplicationContext(), GastoComOCarroActivity.class);
+//                startActivity(intent);
+//            }
+//        });
+   }
 }

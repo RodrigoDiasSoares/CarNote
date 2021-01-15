@@ -12,17 +12,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PossanteÁlcoolOuGasolina">
+        <activity android:name=".activity.activitys.EditGastosComOCarroActivity"></activity>
         <activity
             android:name=".activity.activitys.GastoComOCarroActivity"
             android:label="@string/title_activity_gasto_com_o_carro"
-            android:theme="@style/Theme.PossanteÁlcoolOuGasolina.NoActionBar"></activity>
-        <activity android:name=".activity.activitys.EditGastosComOCarroActivity" />
-        <activity android:name=".activity.activitys.AlcoolOuGasolinaResoltado" />
-        <activity android:name=".activity.activitys.ConsumoPorLitroResoltado" />
-        <activity android:name=".activity.activitys.AlcoolOuGasolina" />
-        <activity android:name=".activity.activitys.ConsumoPorLitro" />
-        <activity android:name=".activity.activitys.MainActivity" />
-        <activity android:name=".activity.activitys.SplashActivity">
+            android:theme="@style/Theme.PossanteÁlcoolOuGasolina.NoActionBar"
+            android:screenOrientation="portrait" />
+        <activity android:name=".activity.activitys.AlcoolOuGasolinaResoltado"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.activitys.ConsumoPorLitroResoltado"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.activitys.AlcoolOuGasolina"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.activitys.ConsumoPorLitro"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.activitys.MainActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.activitys.SplashActivity"
+            android:screenOrientation="portrait">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

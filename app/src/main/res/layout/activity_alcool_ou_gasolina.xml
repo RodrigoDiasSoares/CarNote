@@ -10,29 +10,64 @@
         android:id="@+id/textViewKm"
         android:layout_width="72dp"
         android:layout_height="27dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="35dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
         android:layout_marginBottom="40dp"
         android:background="@android:color/holo_orange_light"
         android:text="Gasolina"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/buttonCalcularAlcoolOuGasolina"
-        app:layout_constraintEnd_toStartOf="@+id/textInputLayoutKm"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toBottomOf="@+id/textViewLitros"
         app:layout_constraintVertical_bias="0.0" />
 
+    <TextView
+        android:id="@+id/textViewLitros"
+        android:layout_width="72dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="36dp"
+        android:background="@android:color/holo_green_light"
+        android:gravity="center"
+        android:text="Álcool"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutLitros"
+        android:layout_width="240dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:hint="Digite o valor do Álcool"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewLitros"
+        app:layout_constraintTop_toTopOf="@+id/guideline">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/TextInputEditTextLitros"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:digits="0123456789.,"
+            android:imeOptions="actionNext"
+            android:inputType="numberDecimal"
+            android:maxLines="1"
+            android:textSize="18sp"
+            android:visibility="visible" />
+    </com.google.android.material.textfield.TextInputLayout>
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayoutKm"
-        android:layout_width="270dp"
-        android:layout_height="58dp"
+        android:layout_width="240dp"
+        android:layout_height="60dp"
         android:hint="Digite o valor do Gasolina"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.787"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewKm"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayoutLitros">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -48,59 +83,17 @@
             android:visibility="visible" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <TextView
-        android:id="@+id/textViewLitros"
-        android:layout_width="72dp"
-        android:layout_height="27dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
-        android:background="@android:color/holo_green_light"
-        android:gravity="center"
-        android:text="Álcool"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/textInputLayoutLitros"
-        app:layout_constraintHorizontal_bias="0.227"
-        app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toTopOf="@+id/guideline" />
-
     <Button
         android:id="@+id/buttonCalcularAlcoolOuGasolina"
-        android:layout_width="360dp"
+        android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:onClick="calcularPreco"
         android:text="Calcular"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayoutLitros"
-        android:layout_width="270dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="10dp"
-        android:hint="Digite o valor do Álcool"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.787"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/TextInputEditTextLitros"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/white"
-            android:digits="0123456789.,"
-            android:imeOptions="actionNext"
-            android:inputType="numberDecimal"
-            android:maxLines="1"
-            android:textSize="18sp"
-            android:visibility="visible" />
-    </com.google.android.material.textfield.TextInputLayout>
 
 
     <com.airbnb.lottie.LottieAnimationView
@@ -149,7 +142,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="16dp" />
+        app:layout_constraintGuide_begin="5dp" />
 
     <com.google.android.gms.ads.AdView
         android:id="@+id/adViewAlcoolOuGasolina"
@@ -161,4 +154,12 @@
         app:layout_constraintTop_toBottomOf="@+id/buttonCalcularAlcoolOuGasolina"
         app:adSize="BANNER"
         app:adUnitId="ca-app-pub-9067087122803339/1181678983"/>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="45dp"
+        android:layout_height="47dp"
+        android:background="@drawable/ic_menu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
