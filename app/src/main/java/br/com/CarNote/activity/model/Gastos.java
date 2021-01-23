@@ -1,14 +1,23 @@
 package br.com.CarNote.activity.model;
 
-public class Gastos {
+import java.io.Serializable;
+
+public class Gastos implements Serializable {
+    private Long id;
     private String titulo;
     private double preco;
     private String detalhes;
 
-    public Gastos(String titulo, double preco, String detalhes) {
-        this.titulo = titulo;
-        this.preco = preco;
-        this.detalhes = detalhes;
+    public Gastos() {
+
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getTitulo() {

@@ -1,17 +1,25 @@
 package br.com.CarNote.activity.adapter;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.List;
+
 import br.com.CarNote.R;
+import br.com.CarNote.activity.model.Gastos;
 
 public class AdapterGastos extends RecyclerView.Adapter<AdapterGastos.MyViewHolder> {
+    private List<Gastos> gastosList;
+
+    public AdapterGastos(List<Gastos> list) {
+        this.gastosList = list;
+    }
 
     @NonNull
     @Override
@@ -23,23 +31,27 @@ public class AdapterGastos extends RecyclerView.Adapter<AdapterGastos.MyViewHold
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.titulo.setText("testando o teste do titulo de teste");
+        Gastos toDo = gastosList.get(position);
+        holder.itenList.setText(toDo.getTitulo());
+        holder.preco.setText(String.valueOf(toDo.getPreco()));
+        holder.data.setText("19/12/2019");
+        Log.i("tarefaAdapter", toDo.getTitulo());
     }
 
     @Override
     public int getItemCount() {
-        return 30;
+        return this.gastosList.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView titulo;
-        ImageView buttonEdit;
-        ImageView buttonDelete;
+    public class MyViewHolder extends RecyclerView.ViewHolder{
+        TextView itenList;
+        TextView preco;
+        TextView data;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            titulo = itemView.findViewById(R.id.textViewAdapterItemLista);
-            buttonEdit = itemView.findViewById(R.id.imageViewEdit);
-            buttonDelete = itemView.findViewById(R.id.imageViewDelete);
+            itenList = itemView.findViewById(R.id.textViewAdapterItemLista);
+            preco = itemView.findViewById(R.id.textViewPrecoAdapter);
+            data = itemView.findViewById(R.id.textViewData);
         }
     }
 }
