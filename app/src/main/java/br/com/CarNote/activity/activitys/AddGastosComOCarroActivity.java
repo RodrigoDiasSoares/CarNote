@@ -3,8 +3,6 @@ package br.com.CarNote.activity.activitys;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -25,7 +23,7 @@ public class AddGastosComOCarroActivity extends AppCompatActivity {
     private TextInputEditText editTextPreco;
     private TextInputLayout textInputLayoutGasto;
     private TextInputLayout textInputLayoutPreco;
-    private EditText editTextDetalhes;
+    private EditText editTextData;
     private Button salvar;
     private Gastos editGasto;
     @Override
@@ -36,7 +34,7 @@ public class AddGastosComOCarroActivity extends AppCompatActivity {
         editTextPreco = findViewById(R.id.textInputEditTextPreco);
         textInputLayoutGasto = findViewById(R.id.textInputLayoutGastos);
         textInputLayoutPreco = findViewById(R.id.textInputLayoutPreco);
-        editTextDetalhes = findViewById(R.id.editTextTextDetalhes);
+        editTextData = findViewById(R.id.editTextDate);
         salvar = findViewById(R.id.buttonSalvarGasto);
 
         salvar.setOnClickListener(new View.OnClickListener() {
@@ -47,13 +45,13 @@ public class AddGastosComOCarroActivity extends AppCompatActivity {
                     String tituloGasto = editTextGasto.getText().toString();
                     double preco = Double.parseDouble(editTextPreco.getText().toString());
                     Double p = preco;
-                    String detalhes = editTextDetalhes.getText().toString();
+                    String detalhes = editTextData.getText().toString();
                     if(!tituloGasto.isEmpty() && p != null){
                         Gastos gastos = new Gastos();
                         gastos.setTitulo(tituloGasto);
                         gastos.setId(editGasto.getId());
                         gastos.setPreco(preco);
-                        gastos.setDetalhes(detalhes);
+                        gastos.setData(detalhes);
                         if(gastosDAO.atualizar(gastos)){
                             finish();
                             Toast.makeText(getApplicationContext(),
@@ -68,13 +66,13 @@ public class AddGastosComOCarroActivity extends AppCompatActivity {
                 }else {
                     String tituloGasto = editTextGasto.getText().toString();
                     Double p = Double.parseDouble(editTextPreco.getText().toString());
-                    String detalhes = editTextDetalhes.getText().toString();
+                    String detalhes = editTextData.getText().toString();
 
                     if(!tituloGasto.isEmpty() && p != null){
                         Gastos gastos = new Gastos();
                         gastos.setTitulo(tituloGasto);
                         gastos.setPreco(p);
-                        gastos.setDetalhes(detalhes);
+                        gastos.setData(detalhes);
                         if (gastosDAO.salvar(gastos)){
                             finish();
                             Toast.makeText(getApplicationContext(),
@@ -106,13 +104,13 @@ public class AddGastosComOCarroActivity extends AppCompatActivity {
                     String tituloGasto = editTextGasto.getText().toString();
                     double preco = Double.parseDouble(editTextPreco.getText().toString());
                     Double p = preco;
-                    String detalhes = editTextDetalhes.getText().toString();
+                    String detalhes = editTextData.getText().toString();
                     if(!tituloGasto.isEmpty() && p != null){
                         Gastos gastos = new Gastos();
                         gastos.setTitulo(tituloGasto);
                         gastos.setId(editGasto.getId());
                         gastos.setPreco(preco);
-                        gastos.setDetalhes(detalhes);
+                        gastos.setData(detalhes);
                         if(gastosDAO.atualizar(gastos)){
                             finish();
                             Toast.makeText(getApplicationContext(),
@@ -127,13 +125,13 @@ public class AddGastosComOCarroActivity extends AppCompatActivity {
                 }else {
                     String tituloGasto = editTextGasto.getText().toString();
                     Double p = Double.parseDouble(editTextPreco.getText().toString());
-                    String detalhes = editTextDetalhes.getText().toString();
+                    String detalhes = editTextData.getText().toString();
 
                     if(!tituloGasto.isEmpty() && p != null){
                         Gastos gastos = new Gastos();
                         gastos.setTitulo(tituloGasto);
                         gastos.setPreco(p);
-                        gastos.setDetalhes(detalhes);
+                        gastos.setData(detalhes);
                         if (gastosDAO.salvar(gastos)){
                             finish();
                             Toast.makeText(getApplicationContext(),

@@ -6,12 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".activity.activitys.AlcoolOuGasolina">
 
+
+    <Button
+        android:id="@+id/buttonCalcularAlcoolOuGasolina"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:onClick="calcularPreco"
+        android:text="Calcular"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.34"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+
     <TextView
         android:id="@+id/textViewKm"
         android:layout_width="72dp"
         android:layout_height="27dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="35dp"
         android:layout_marginBottom="40dp"
         android:background="@android:color/holo_orange_light"
@@ -21,15 +36,15 @@
         app:layout_constraintBottom_toTopOf="@+id/buttonCalcularAlcoolOuGasolina"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toBottomOf="@+id/textViewLitros"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.111" />
 
     <TextView
         android:id="@+id/textViewLitros"
         android:layout_width="72dp"
         android:layout_height="27dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="100dp"
         android:background="@android:color/holo_green_light"
         android:gravity="center"
         android:text="Álcool"
@@ -42,9 +57,10 @@
         android:id="@+id/textInputLayoutLitros"
         android:layout_width="240dp"
         android:layout_height="60dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="72dp"
         android:hint="Digite o valor do Álcool"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.337"
         app:layout_constraintStart_toEndOf="@+id/textViewLitros"
         app:layout_constraintTop_toTopOf="@+id/guideline">
 
@@ -65,8 +81,10 @@
         android:id="@+id/textInputLayoutKm"
         android:layout_width="240dp"
         android:layout_height="60dp"
+        android:layout_marginTop="4dp"
         android:hint="Digite o valor do Gasolina"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.337"
         app:layout_constraintStart_toEndOf="@+id/textViewKm"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayoutLitros">
 
@@ -83,26 +101,13 @@
             android:visibility="visible" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
-        android:id="@+id/buttonCalcularAlcoolOuGasolina"
-        android:layout_width="320dp"
-        android:layout_height="wrap_content"
-        android:onClick="calcularPreco"
-        android:text="Calcular"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline2" />
-
-
     <com.airbnb.lottie.LottieAnimationView
-        android:layout_width="180dp"
-        android:layout_height="143dp"
-        android:layout_marginTop="4dp"
+        android:layout_width="220dp"
+        android:layout_height="156dp"
+        android:layout_marginTop="80dp"
         android:contentDescription="@string/app_name"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.818"
+        app:layout_constraintHorizontal_bias="0.916"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:lottie_autoPlay="true"
@@ -113,10 +118,10 @@
         android:id="@+id/lottieAnimationView3"
         android:layout_width="180dp"
         android:layout_height="143dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="96dp"
         android:contentDescription="@string/app_name"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.203"
+        app:layout_constraintHorizontal_bias="0.19"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:lottie_autoPlay="true"
@@ -147,13 +152,13 @@
     <com.google.android.gms.ads.AdView
         android:id="@+id/adViewAlcoolOuGasolina"
         android:layout_width="350dp"
-        android:layout_height="203dp"
+        android:layout_height="148dp"
         android:layout_marginTop="38dp"
+        app:adSize="BANNER"
+        app:adUnitId="ca-app-pub-9067087122803339/1181678983"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonCalcularAlcoolOuGasolina"
-        app:adSize="BANNER"
-        app:adUnitId="ca-app-pub-9067087122803339/1181678983"/>
+        app:layout_constraintTop_toBottomOf="@+id/buttonCalcularAlcoolOuGasolina" />
 
     <Button
         android:id="@+id/button"

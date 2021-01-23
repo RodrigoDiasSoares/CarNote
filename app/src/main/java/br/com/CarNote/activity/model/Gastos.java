@@ -6,7 +6,7 @@ public class Gastos implements Serializable {
     private Long id;
     private String titulo;
     private double preco;
-    private String detalhes;
+    private String data;
 
     public Gastos() {
 
@@ -36,11 +36,11 @@ public class Gastos implements Serializable {
         this.preco = preco;
     }
 
-    public String getDetalhes() {
-        return detalhes;
+    public String getData() {
+        return data;
     }
 
-    public void setDetalhes(String detalhes) {
-        this.detalhes = detalhes;
+    public void setData(String data) {
+        this.data = data;
     }
 }

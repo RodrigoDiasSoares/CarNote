@@ -45,7 +45,7 @@
         android:layout_marginTop="28dp"
         android:background="@android:color/holo_orange_light"
         android:gravity="center"
-        android:text="Detalhes"
+        android:text="Data"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -136,17 +136,15 @@
         app:layout_constraintGuide_begin="85dp" />
 
     <EditText
-        android:id="@+id/editTextTextDetalhes"
-        android:layout_width="242dp"
-        android:layout_height="223dp"
-        android:layout_marginTop="84dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:background="@drawable/shape_rect"
+        android:id="@+id/editTextDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginRight="44dp"
         android:ems="10"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
+        android:inputType="date"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutGastos" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPreco" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

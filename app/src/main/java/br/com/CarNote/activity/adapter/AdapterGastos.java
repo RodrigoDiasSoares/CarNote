@@ -34,7 +34,7 @@ public class AdapterGastos extends RecyclerView.Adapter<AdapterGastos.MyViewHold
         Gastos toDo = gastosList.get(position);
         holder.itenList.setText(toDo.getTitulo());
         holder.preco.setText(String.valueOf(toDo.getPreco()));
-        holder.data.setText("19/12/2019");
+        holder.data.setText(toDo.getData());
         Log.i("tarefaAdapter", toDo.getTitulo());
     }
 

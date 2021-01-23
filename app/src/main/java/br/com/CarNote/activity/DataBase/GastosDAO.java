@@ -26,7 +26,7 @@ public class GastosDAO implements iGastosDAO{
         ContentValues cv = new ContentValues();
         cv.put("titulo",gastos.getTitulo());
         cv.put("preco",gastos.getPreco());
-        cv.put("detalhes",gastos.getDetalhes());
+        cv.put("detalhes",gastos.getData());
         try {
             escrever.insert(DbHelper.TABELA_GASTOS,null,cv);
             Log.i("INFO","Sucesso ao salvar Gasto ");
@@ -43,7 +43,7 @@ public class GastosDAO implements iGastosDAO{
         ContentValues cv = new ContentValues();
         cv.put("titulo",gastos.getTitulo());
         cv.put("preco",gastos.getPreco());
-        cv.put("detalhes",gastos.getDetalhes());
+        cv.put("detalhes",gastos.getData());
         try {
             String[] args = {gastos.getId().toString()};
             escrever.update(DbHelper.TABELA_GASTOS,cv,"id=",args);
@@ -84,7 +84,7 @@ public class GastosDAO implements iGastosDAO{
             gastos.setId(id);
             gastos.setTitulo(tituloGasto);
             gastos.setPreco(precoGasto);
-            gastos.setDetalhes(dethalheGasto);
+            gastos.setData(dethalheGasto);
             gastosList.add(gastos);
             Log.i("DB", ""+gastos.getTitulo());
         }
