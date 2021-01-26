@@ -36,7 +36,13 @@ public class AddGastosComOCarroActivity extends AppCompatActivity {
         textInputLayoutPreco = findViewById(R.id.textInputLayoutPreco);
         editTextData = findViewById(R.id.editTextDate);
         salvar = findViewById(R.id.buttonSalvarGasto);
+        editGasto = (Gastos) getIntent().getSerializableExtra("gastoSelecionado");
 
+        if(editGasto != null){
+            editTextGasto.setText(editGasto.getTitulo());
+            editTextPreco.setText(String.valueOf(editGasto.getPreco()));
+            editTextData.setText(editGasto.getData());
+        }
         salvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -100,6 +106,7 @@ public class AddGastosComOCarroActivity extends AppCompatActivity {
             case R.id.itemSalvar :
 
                 GastosDAO gastosDAO = new GastosDAO(getApplicationContext());
+
                 if(editGasto != null){
                     String tituloGasto = editTextGasto.getText().toString();
                     double preco = Double.parseDouble(editTextPreco.getText().toString());

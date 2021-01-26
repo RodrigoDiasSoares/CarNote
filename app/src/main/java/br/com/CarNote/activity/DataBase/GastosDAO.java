@@ -26,7 +26,7 @@ public class GastosDAO implements iGastosDAO{
         ContentValues cv = new ContentValues();
         cv.put("titulo",gastos.getTitulo());
         cv.put("preco",gastos.getPreco());
-        cv.put("detalhes",gastos.getData());
+        cv.put("data",gastos.getData());
         try {
             escrever.insert(DbHelper.TABELA_GASTOS,null,cv);
             Log.i("INFO","Sucesso ao salvar Gasto ");
@@ -46,7 +46,7 @@ public class GastosDAO implements iGastosDAO{
         cv.put("detalhes",gastos.getData());
         try {
             String[] args = {gastos.getId().toString()};
-            escrever.update(DbHelper.TABELA_GASTOS,cv,"id=",args);
+            escrever.update(DbHelper.TABELA_GASTOS,cv,"id=?" ,args);
             Log.i("INFO","Sucesso ao Atulizar Gasto ");
         }catch (Exception e){
             Log.e("INFO","Erro ao Atulizar Gasto "+ e.getMessage());
@@ -60,7 +60,7 @@ public class GastosDAO implements iGastosDAO{
     public boolean deletar(Gastos gastos) {
         try {
             String[] args = {gastos.getId().toString()};
-            escrever.delete(DbHelper.TABELA_GASTOS,"id=",args);
+            escrever.delete(DbHelper.TABELA_GASTOS,"id=?",args);
             Log.i("INFO","Sucesso ao Deletar Gasto ");
         }catch (Exception e){
             Log.e("INFO","Erro ao Deletar Gasto "+ e.getMessage());

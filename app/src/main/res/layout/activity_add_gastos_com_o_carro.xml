@@ -87,7 +87,10 @@
             android:layout_height="wrap_content"
             android:digits="0123456789.,"
             android:imeOptions="actionNext"
-            android:inputType="numberDecimal" />
+            android:inputType="numberDecimal"
+            android:maxLines="1"
+            android:textSize="18sp"
+            android:visibility="visible" />
 
     </com.google.android.material.textfield.TextInputLayout>
 

@@ -47,7 +47,7 @@ public class GastoComOCarroActivity extends AppCompatActivity {
                             public void onItemClick(View view, int position) {
                                 Gastos GastoSelecionado = listaGastos.get(position);
                                 Intent intent = new Intent(GastoComOCarroActivity.this, AddGastosComOCarroActivity.class);
-                                intent.putExtra("selectedToDo", GastoSelecionado);
+                                intent.putExtra("gastoSelecionado", GastoSelecionado);
                                 startActivity(intent);
                             }
                             @Override
