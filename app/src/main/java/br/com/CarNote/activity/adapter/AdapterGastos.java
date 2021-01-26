@@ -31,11 +31,11 @@ public class AdapterGastos extends RecyclerView.Adapter<AdapterGastos.MyViewHold
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        Gastos toDo = gastosList.get(position);
-        holder.itenList.setText(toDo.getTitulo());
-        holder.preco.setText(String.valueOf(toDo.getPreco()));
-        holder.data.setText(toDo.getData());
-        Log.i("tarefaAdapter", toDo.getTitulo());
+        Gastos gastos = gastosList.get(position);
+        holder.itenList.setText(gastos.getTitulo());
+        holder.preco.setText(String.valueOf(gastos.getPreco()));
+        holder.data.setText(gastos.getData());
+        Log.i("tarefaAdapter", gastos.getTitulo());
     }
 
     @Override

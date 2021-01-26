@@ -138,15 +138,18 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="85dp" />
 
-    <EditText
-        android:id="@+id/editTextDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginRight="44dp"
-        android:ems="10"
-        android:inputType="date"
+    <Button
+        android:id="@+id/buttonDate"
+        android:layout_width="242dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:gravity="center|center_horizontal"
+        android:text="Data"
+        android:textSize="18sp"
+        app:backgroundTint="@color/design_default_color_primary"
+        app:icon="@drawable/ic_calendar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPreco" />
 

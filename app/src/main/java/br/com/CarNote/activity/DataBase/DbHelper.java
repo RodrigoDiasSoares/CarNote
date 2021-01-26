@@ -22,7 +22,7 @@ public class DbHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         String sql = "create table if not exists "+TABELA_GASTOS
                 +" (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL" +
-                " , titulo varchar not null, preco real not null, data TEXT);";
+                " , titulo varchar not null, preco real not null, data varchar not null);";
         try {
             sqLiteDatabase.execSQL(sql);
             Log.i("INFO DB", "Sucesso ao criar a tabela" );

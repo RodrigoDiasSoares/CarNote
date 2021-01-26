@@ -43,7 +43,7 @@ public class GastosDAO implements iGastosDAO{
         ContentValues cv = new ContentValues();
         cv.put("titulo",gastos.getTitulo());
         cv.put("preco",gastos.getPreco());
-        cv.put("detalhes",gastos.getData());
+        cv.put("data",gastos.getData());
         try {
             String[] args = {gastos.getId().toString()};
             escrever.update(DbHelper.TABELA_GASTOS,cv,"id=?" ,args);
@@ -73,18 +73,20 @@ public class GastosDAO implements iGastosDAO{
     @Override
     public List<Gastos> listar() {
         List<Gastos> gastosList = new ArrayList<>();
+
         String sql = "SELECT * FROM " + DbHelper.TABELA_GASTOS + " ;";
         Cursor cursor = ler.rawQuery(sql, null);
+
         while (cursor.moveToNext()){
             Gastos gastos = new Gastos();
             Long id = cursor.getLong(cursor.getColumnIndex("id"));
             String tituloGasto = cursor.getString(cursor.getColumnIndex("titulo"));
             double precoGasto = cursor.getDouble(cursor.getColumnIndex("preco"));
-            String dethalheGasto = cursor.getString(cursor.getColumnIndex("detalhes"));
+            String data = cursor.getString(cursor.getColumnIndex("data"));
             gastos.setId(id);
             gastos.setTitulo(tituloGasto);
             gastos.setPreco(precoGasto);
-            gastos.setData(dethalheGasto);
+            gastos.setData(data);
             gastosList.add(gastos);
             Log.i("DB", ""+gastos.getTitulo());
         }

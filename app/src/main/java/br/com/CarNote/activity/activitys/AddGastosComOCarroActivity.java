@@ -2,30 +2,37 @@ package br.com.CarNote.activity.activitys;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.DatePicker;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.text.DateFormat;
+import java.util.Calendar;
+
 import br.com.CarNote.R;
 import br.com.CarNote.activity.DataBase.GastosDAO;
+import br.com.CarNote.activity.framents.DatePickerFragment;
 import br.com.CarNote.activity.model.Gastos;
 
-public class AddGastosComOCarroActivity extends AppCompatActivity {
+public class AddGastosComOCarroActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener{
     private TextInputEditText editTextGasto;
     private TextInputEditText editTextPreco;
     private TextInputLayout textInputLayoutGasto;
     private TextInputLayout textInputLayoutPreco;
-    private EditText editTextData;
+    private Button buttonData;
     private Button salvar;
     private Gastos editGasto;
+    private String data;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,14 +41,21 @@ public class AddGastosComOCarroActivity extends AppCompatActivity {
         editTextPreco = findViewById(R.id.textInputEditTextPreco);
         textInputLayoutGasto = findViewById(R.id.textInputLayoutGastos);
         textInputLayoutPreco = findViewById(R.id.textInputLayoutPreco);
-        editTextData = findViewById(R.id.editTextDate);
+        buttonData = findViewById(R.id.buttonDate);
         salvar = findViewById(R.id.buttonSalvarGasto);
         editGasto = (Gastos) getIntent().getSerializableExtra("gastoSelecionado");
+        buttonData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DialogFragment datePicker = new DatePickerFragment();
+                datePicker.show(getSupportFragmentManager(),"date picker");
+            }
+        });
 
         if(editGasto != null){
             editTextGasto.setText(editGasto.getTitulo());
             editTextPreco.setText(String.valueOf(editGasto.getPreco()));
-            editTextData.setText(editGasto.getData());
+            buttonData.setText(editGasto.getData());
         }
         salvar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,13 +65,13 @@ public class AddGastosComOCarroActivity extends AppCompatActivity {
                     String tituloGasto = editTextGasto.getText().toString();
                     double preco = Double.parseDouble(editTextPreco.getText().toString());
                     Double p = preco;
-                    String detalhes = editTextData.getText().toString();
+
                     if(!tituloGasto.isEmpty() && p != null){
                         Gastos gastos = new Gastos();
                         gastos.setTitulo(tituloGasto);
                         gastos.setId(editGasto.getId());
                         gastos.setPreco(preco);
-                        gastos.setData(detalhes);
+                        gastos.setData(data);
                         if(gastosDAO.atualizar(gastos)){
                             finish();
                             Toast.makeText(getApplicationContext(),
@@ -72,13 +86,13 @@ public class AddGastosComOCarroActivity extends AppCompatActivity {
                 }else {
                     String tituloGasto = editTextGasto.getText().toString();
                     Double p = Double.parseDouble(editTextPreco.getText().toString());
-                    String detalhes = editTextData.getText().toString();
+
 
                     if(!tituloGasto.isEmpty() && p != null){
                         Gastos gastos = new Gastos();
                         gastos.setTitulo(tituloGasto);
                         gastos.setPreco(p);
-                        gastos.setData(detalhes);
+                        gastos.setData(data);
                         if (gastosDAO.salvar(gastos)){
                             finish();
                             Toast.makeText(getApplicationContext(),
@@ -111,13 +125,13 @@ public class AddGastosComOCarroActivity extends AppCompatActivity {
                     String tituloGasto = editTextGasto.getText().toString();
                     double preco = Double.parseDouble(editTextPreco.getText().toString());
                     Double p = preco;
-                    String detalhes = editTextData.getText().toString();
+
                     if(!tituloGasto.isEmpty() && p != null){
                         Gastos gastos = new Gastos();
                         gastos.setTitulo(tituloGasto);
                         gastos.setId(editGasto.getId());
                         gastos.setPreco(preco);
-                        gastos.setData(detalhes);
+                        gastos.setData(data);
                         if(gastosDAO.atualizar(gastos)){
                             finish();
                             Toast.makeText(getApplicationContext(),
@@ -132,13 +146,13 @@ public class AddGastosComOCarroActivity extends AppCompatActivity {
                 }else {
                     String tituloGasto = editTextGasto.getText().toString();
                     Double p = Double.parseDouble(editTextPreco.getText().toString());
-                    String detalhes = editTextData.getText().toString();
+
 
                     if(!tituloGasto.isEmpty() && p != null){
                         Gastos gastos = new Gastos();
                         gastos.setTitulo(tituloGasto);
                         gastos.setPreco(p);
-                        gastos.setData(detalhes);
+                        gastos.setData(data);
                         if (gastosDAO.salvar(gastos)){
                             finish();
                             Toast.makeText(getApplicationContext(),
@@ -155,6 +169,17 @@ public class AddGastosComOCarroActivity extends AppCompatActivity {
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+    @Override
+    public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
+        Calendar c = Calendar.getInstance();
+        c.set(Calendar.YEAR, i);
+        c.set(Calendar.MONTH, i1);
+        c.set(Calendar.DAY_OF_MONTH, i2);
+        data = DateFormat.getDateInstance(DateFormat.DEFAULT).format(c.getTime());
+        buttonData.setText(data);
+
+
     }
 
 }

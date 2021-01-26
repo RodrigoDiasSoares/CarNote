@@ -2,6 +2,7 @@ package br.com.CarNote.activity.activitys;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -37,7 +38,6 @@ public class GastoComOCarroActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gasto_com_o_carro);
         recyclerView = findViewById(R.id.recyclerView);
-        DbHelper db = new DbHelper(getApplicationContext());
         recyclerView.addOnItemTouchListener(
                 new RecyclerItemClickListener(
                         getApplicationContext(),
@@ -60,8 +60,8 @@ public class GastoComOCarroActivity extends AppCompatActivity {
                                 dialog.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialogInterface, int i) {
-                                        GastosDAO toDoDAO = new GastosDAO(getApplicationContext());
-                                        if(toDoDAO.deletar(gastoSelecionado)){
+                                        GastosDAO gastosDAO = new GastosDAO(getApplicationContext());
+                                        if(gastosDAO.deletar(gastoSelecionado)){
 
                                             carregarLista();
                                             Toast.makeText(getApplicationContext(),
