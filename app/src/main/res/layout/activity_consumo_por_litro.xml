@@ -40,16 +40,16 @@
         android:id="@+id/adViewConsumoPorLitro"
         android:layout_width="358dp"
         android:layout_height="140dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="20dp"
         app:adSize="BANNER"
         app:adUnitId="ca-app-pub-9067087122803339/6354114619"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.433"
+        app:layout_constraintHorizontal_bias="0.566"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonCalcularAlcoolOuGasolina" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonCalcularConsumo" />
 
     <Button
-        android:id="@+id/buttonCalcularAlcoolOuGasolina"
+        android:id="@+id/buttonCalcularConsumo"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
@@ -66,7 +66,7 @@
         android:layout_height="60dp"
         android:layout_marginStart="5dp"
         android:layout_marginLeft="5dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:hint="Digite os Quilômetro"
@@ -117,6 +117,7 @@
         app:layout_constraintVertical_bias="0.142" />
 
     <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieAnimationView6"
         android:layout_width="382dp"
         android:layout_height="287dp"
         android:layout_marginStart="36dp"

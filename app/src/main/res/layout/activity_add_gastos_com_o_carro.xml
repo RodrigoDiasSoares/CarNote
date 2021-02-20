@@ -6,6 +6,30 @@
     android:layout_height="match_parent"
     tools:context=".activity.activitys.AddGastosComOCarroActivity">
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutData"
+        android:layout_width="242dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:hint="Ex: 19/02/2021"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPreco">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputEditTextData"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:focusable="false"
+            android:imeOptions="actionNext"
+            android:inputType="numberDecimal"
+            android:maxLines="1"
+            android:textSize="18sp"
+            android:visibility="visible" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
     <TextView
         android:id="@+id/textViewGasto"
         android:layout_width="75dp"
@@ -87,7 +111,6 @@
             android:layout_height="wrap_content"
             android:digits="0123456789.,"
             android:imeOptions="actionNext"
-            android:inputType="numberDecimal"
             android:maxLines="1"
             android:textSize="18sp"
             android:visibility="visible" />
@@ -137,20 +160,5 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="85dp" />
-
-    <Button
-        android:id="@+id/buttonDate"
-        android:layout_width="242dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:gravity="center|center_horizontal"
-        android:text="Data"
-        android:textSize="18sp"
-        app:backgroundTint="@color/design_default_color_primary"
-        app:icon="@drawable/ic_calendar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPreco" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

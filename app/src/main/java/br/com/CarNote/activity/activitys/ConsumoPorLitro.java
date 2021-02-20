@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -39,7 +40,7 @@ public class ConsumoPorLitro extends AppCompatActivity {
         editTextLitros = findViewById(R.id.TextInputEditTextLitros);
         textInputLayoutKm = findViewById(R.id.textInputLayoutKm);
         textInputLayoutLitros = findViewById(R.id.textInputLayoutLitros);
-        buttonResultadoKmPorLitro = findViewById(R.id.buttonCalcularAlcoolOuGasolina);
+        buttonResultadoKmPorLitro = findViewById(R.id.buttonCalcularConsumo);
         mAdView = findViewById(R.id.adViewConsumoPorLitro);
 
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
@@ -86,11 +87,8 @@ public class ConsumoPorLitro extends AppCompatActivity {
         String litros = editTextLitros.getText().toString();
         String km = editTextkm.getText().toString();
 
-        String camposValidos = validarCampos(litros, km);
-        if(camposValidos.equals("true")){
+        if(validarCampos(litros, km)){
             try {
-                textInputLayoutLitros.setErrorEnabled(false);
-                textInputLayoutKm.setErrorEnabled(false);
                 equação(litros, km);
             }catch (NumberFormatException e){
                 litros = litros.replace(',','.');
@@ -98,7 +96,9 @@ public class ConsumoPorLitro extends AppCompatActivity {
                 equação(litros, km);
             }
         }else {
-            validarCampos(litros, km);
+            Toast.makeText(getApplicationContext(),
+                    "Preencha os campos",
+                    Toast.LENGTH_SHORT).show();
         }
     }
     public void equação(String litros, String km){
@@ -113,36 +113,19 @@ public class ConsumoPorLitro extends AppCompatActivity {
     }
 
 
-    public String validarCampos(String litros, String km){
-        String camposValidos = "true";
-        if(litros.equals("") && km.equals("")){
-            camposValidos = "Preencha os campos!!";
-        }else
-        if(litros == null && km == null){
-            camposValidos = "Preencha os campos!!";
-        }else
-        if(litros == null || litros.equals("")){
-            camposValidos = "Álcool";
-        }else
-        if(km == null || km.equals("")){
-            camposValidos = "Gasolina";
+    public boolean validarCampos(String litros, String km){
+        boolean camposValidos = true;
+        if(litros.equals("") || litros == null){
+            textInputLayoutLitros.setError("!");
+            camposValidos = false;
+        }else{
+            textInputLayoutLitros.setErrorEnabled(false);
         }
-
-
-        if(!camposValidos.equals("true")){
-            if(camposValidos.equals("Litros")){
-                textInputLayoutKm.setError("!");
-                textInputLayoutLitros.setErrorEnabled(false);
-
-            }else if(camposValidos.equals("Km")){
-                textInputLayoutLitros.setError("!");
-                textInputLayoutKm.setErrorEnabled(false);
-
-            }else {
-                textInputLayoutKm.setError("!");
-                textInputLayoutLitros.setError("!");
-            }
-
+        if(km.equals("") || km == null){
+            textInputLayoutKm.setError("!");
+            camposValidos = false;
+        }else{
+            textInputLayoutKm.setErrorEnabled(false);
         }
 
         return camposValidos;

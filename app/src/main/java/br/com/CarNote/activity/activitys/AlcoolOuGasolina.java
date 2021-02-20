@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -36,10 +37,10 @@ public class AlcoolOuGasolina extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alcool_ou_gasolina);
-        editTextGasolina = findViewById(R.id.TextInputEditTextKm);
-        editTextAlcool = findViewById(R.id.TextInputEditTextLitros);
-        textInputLayoutAcool = findViewById(R.id.textInputLayoutKm);
-        textInputLayoutGasolina = findViewById(R.id.textInputLayoutLitros);
+        editTextGasolina = findViewById(R.id.TextInputEditTextGasolina);
+        editTextAlcool = findViewById(R.id.TextInputEditTextAlcool);
+        textInputLayoutGasolina = findViewById(R.id.textInputLayoutGasolina);
+        textInputLayoutAcool = findViewById(R.id.textInputLayoutAlcool);
         buttonCalcular = findViewById(R.id.buttonCalcularAlcoolOuGasolina);
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
@@ -86,19 +87,21 @@ public class AlcoolOuGasolina extends AppCompatActivity {
         String precoAlcool = editTextAlcool.getText().toString();
         String precoGasolina = editTextGasolina.getText().toString();
 
-        String camposValidos = validarCampos(precoAlcool, precoGasolina);
-        if(camposValidos.equals("true")){
+        if(validarCampos(precoAlcool, precoGasolina)){
             try {
-                textInputLayoutGasolina.setErrorEnabled(false);
-                textInputLayoutAcool.setErrorEnabled(false);
+
                 equação(precoAlcool, precoGasolina);
+
             }catch (NumberFormatException e){
+
                 precoAlcool = precoAlcool.replace(',','.');
                 precoGasolina = precoGasolina.replace(',' , '.');
                 equação(precoAlcool, precoGasolina);
             }
         }else {
-            validarCampos(precoAlcool, precoGasolina);
+            Toast.makeText(getApplicationContext(),
+                    "Preencha os campos",
+                    Toast.LENGTH_SHORT).show();
         }
     }
     public void equação(String precoAlcool, String precoGasolina){
@@ -121,36 +124,27 @@ public class AlcoolOuGasolina extends AppCompatActivity {
     }
 
 
-    public String validarCampos(String precoAlcool, String precoGasolina){
-        String camposValidos = "true";
-        if(precoAlcool.equals("") && precoGasolina.equals("")){
-            camposValidos = "Preencha os campos!!";
-        }else
-        if(precoAlcool == null && precoGasolina == null){
-            camposValidos = "Preencha os campos!!";
-        }else
-        if(precoAlcool == null || precoAlcool.equals("")){
-            camposValidos = "Álcool";
-        }else
-        if(precoGasolina == null || precoGasolina.equals("")){
-            camposValidos = "Gasolina";
+    public boolean validarCampos(String precoAlcool, String precoGasolina){
+        boolean camposValidos = true;
+
+        if(precoAlcool.equals("") || precoAlcool == null){
+
+            textInputLayoutAcool.setError("!");
+            camposValidos = false;
+
+        }else{
+
+            textInputLayoutAcool.setErrorEnabled(false);
         }
 
+        if(precoGasolina.equals("") || precoGasolina == null){
 
-        if(!camposValidos.equals("true")){
-            if(camposValidos.equals("Álcool")){
-                textInputLayoutAcool.setError("!");
-                textInputLayoutGasolina.setErrorEnabled(false);
+            textInputLayoutGasolina.setError("!");
+            camposValidos = false;
 
-            }else if(camposValidos.equals("Gasolina")){
-                textInputLayoutGasolina.setError("!");
-                textInputLayoutAcool.setErrorEnabled(false);
+        }else{
 
-            }else {
-                textInputLayoutAcool.setError("!");
-                textInputLayoutGasolina.setError("!");
-            }
-
+            textInputLayoutGasolina.setErrorEnabled(false);
         }
 
         return camposValidos;
