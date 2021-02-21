@@ -7,6 +7,31 @@
     tools:context=".activity.activitys.AlcoolOuGasolina">
 
 
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="412dp"
+        android:layout_height="83dp"
+        android:background="@drawable/detalhe_menu3"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+
+            android:layout_marginBottom="20dp"
+            android:text="CarNote"
+            android:textColor="#FFFFFF"
+            android:textSize="36sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
     <Button
         android:id="@+id/button2"
         android:layout_width="45dp"
@@ -56,6 +81,8 @@
         android:text="Calcular"
         android:textSize="18sp"
         android:textStyle="bold"
+        android:textColor="#ffff"
+        android:background="@drawable/shape_rect"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2" />

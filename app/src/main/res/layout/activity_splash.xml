@@ -21,10 +21,13 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_width="191dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/detalhe_menu3"
+        android:gravity="center"
         android:text="CarNote"
+        android:textColor="@color/white"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -6,6 +6,31 @@
     android:layout_height="match_parent"
     tools:context="br.com.CarNote.activity.activitys.AlcoolOuGasolinaResoltado">
 
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="412dp"
+        android:layout_height="83dp"
+        android:background="@drawable/detalhe_menu3"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+
+            android:layout_marginBottom="20dp"
+            android:text="CarNote"
+            android:textColor="#FFFFFF"
+            android:textSize="36sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/lottieAnimationView2"
         android:layout_width="99dp"

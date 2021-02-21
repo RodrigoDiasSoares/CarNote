@@ -27,7 +27,7 @@ public class ConsumoPorLitro extends AppCompatActivity {
     private TextInputEditText editTextLitros;
     private TextInputLayout textInputLayoutLitros;
     private TextInputLayout textInputLayoutKm;
-    private Button buttonResultadoKmPorLitro;
+    private Button buttonCalcularKmPorLitro;
     private AdView mAdView;
 
     private FragmentPagerAdapter adapterViewPager;
@@ -40,8 +40,9 @@ public class ConsumoPorLitro extends AppCompatActivity {
         editTextLitros = findViewById(R.id.TextInputEditTextLitros);
         textInputLayoutKm = findViewById(R.id.textInputLayoutKm);
         textInputLayoutLitros = findViewById(R.id.textInputLayoutLitros);
-        buttonResultadoKmPorLitro = findViewById(R.id.buttonCalcularConsumo);
+        buttonCalcularKmPorLitro = findViewById(R.id.buttonCalcularConsumo);
         mAdView = findViewById(R.id.adViewConsumoPorLitro);
+
 
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
@@ -73,7 +74,7 @@ public class ConsumoPorLitro extends AppCompatActivity {
                 return false;
             }
         });
-        buttonResultadoKmPorLitro.setOnClickListener(new View.OnClickListener() {
+        buttonCalcularKmPorLitro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 calcularKmPorLitro(v);
@@ -83,48 +84,49 @@ public class ConsumoPorLitro extends AppCompatActivity {
 
     }
 
-    public void calcularKmPorLitro(View view){
+    public void calcularKmPorLitro(View view) {
         String litros = editTextLitros.getText().toString();
         String km = editTextkm.getText().toString();
 
-        if(validarCampos(litros, km)){
+        if (validarCampos(litros, km)) {
             try {
                 equação(litros, km);
-            }catch (NumberFormatException e){
-                litros = litros.replace(',','.');
-                km = km.replace(',' , '.');
+            } catch (NumberFormatException e) {
+                litros = litros.replace(',', '.');
+                km = km.replace(',', '.');
                 equação(litros, km);
             }
-        }else {
+        } else {
             Toast.makeText(getApplicationContext(),
                     "Preencha os campos",
                     Toast.LENGTH_SHORT).show();
         }
     }
-    public void equação(String litros, String km){
+
+    public void equação(String litros, String km) {
         double valorlitros = Double.parseDouble(litros);
         double valorKm = Double.parseDouble(km);
         double resultado = valorKm / valorlitros;
 
         Intent intent = new Intent(getBaseContext(), ConsumoPorLitroResoltado.class);
-        intent.putExtra("resultado",resultado);
+        intent.putExtra("resultado", resultado);
         startActivity(intent);
 
     }
 
 
-    public boolean validarCampos(String litros, String km){
+    public boolean validarCampos(String litros, String km) {
         boolean camposValidos = true;
-        if(litros.equals("") || litros == null){
+        if (litros.equals("") || litros == null) {
             textInputLayoutLitros.setError("!");
             camposValidos = false;
-        }else{
+        } else {
             textInputLayoutLitros.setErrorEnabled(false);
         }
-        if(km.equals("") || km == null){
+        if (km.equals("") || km == null) {
             textInputLayoutKm.setError("!");
             camposValidos = false;
-        }else{
+        } else {
             textInputLayoutKm.setErrorEnabled(false);
         }
 
