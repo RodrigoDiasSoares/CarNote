@@ -9,7 +9,7 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="412dp"
+        android:layout_width="wrap_content"
         android:layout_height="83dp"
         android:background="@drawable/detalhe_menu3"
         android:orientation="horizontal"
@@ -34,17 +34,17 @@
 
     <Button
         android:id="@+id/buttonCalcularAlcoolOuGasolina"
-        android:layout_width="320dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
-        android:background="@drawable/shape_rect"
+        android:background="@drawable/shape_degrade"
         android:onClick="calcularPreco"
         android:text="Calcular"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.34"
+        app:layout_constraintHorizontal_bias="0.54"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
@@ -118,7 +118,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/TextInputEditTextGasolina"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:background="@color/white"
             android:digits="0123456789.,"
             android:imeOptions="actionNext"
