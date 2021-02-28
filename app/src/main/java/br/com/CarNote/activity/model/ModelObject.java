@@ -4,9 +4,9 @@ package br.com.CarNote.activity.model;
 import br.com.CarNote.R;
 
 public enum ModelObject {
-    RED(R.string.red, R.layout.view_red),
-    BLUE(R.string.blue, R.layout.view_blue),
-    GREEN(R.string.green, R.layout.view_green);
+    tutorialAlcoolOuGasolina(R.string.tutorial_alcool_ou_gasolina, R.layout.view_alcool_ou_gasolina),
+    tutorialConsumoPorLitro(R.string.tutorial_consumo_por_litro, R.layout.view_consumo_por_litro),
+    tutorialGastosComCarro(R.string.tutorial_gastos_com_carro, R.layout.view_gastos_com_carro);
 
     private int mTitleResId;
     private int mLayoutResId;

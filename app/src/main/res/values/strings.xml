@@ -17,15 +17,15 @@
     <string name="_11200_00">11200,00</string>
     <string name="todo">TODO</string>
     <string name="carnote">CarNote</string>
-    <string name="red">RED</string>
-    <string name="blue">BLUE</string>
-    <string name="green">GREEN</string>
+    <string name="tutorial_alcool_ou_gasolina">Alcool ou Gasolina</string>
+    <string name="tutorial_consumo_por_litro">Consumo por litro</string>
+    <string name="tutorial_gastos_com_carro">Gastos com Carro</string>
     <string name="TextoConsumoPorLitro" formatted="true">
-        "É necessário encher o
-        tanque e zerar o odômetro do veículo,
-        no próximo abastecimento é necessário
-        encher o tanque novamente,
-        calcule o valor atual do odômetro com a
-        quantidade de litros resultante da
-        bomba de combustível."</string>
+        "É necessário encher o tanque e zerar<br/>
+        o odômetro do veículo, no próximo<br/>
+        abastecimento é necessário encher<br/>
+        o tanque novamente, calcule o valor<br/>
+        atual do odômetro com a quantidade<br/>
+        de litros resultante da bomba<br/>
+        de combustível."</string>
 </resources>
