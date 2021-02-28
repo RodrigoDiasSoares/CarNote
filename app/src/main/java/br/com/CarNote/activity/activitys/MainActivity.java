@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         buttonAlcoolOuGasolina = findViewById(R.id.btnAlcoolOuGasolina);
         buttonConsumoPorLitro = findViewById(R.id.btnConsumoPorLitro);
         buttonGastosComCarro = findViewById(R.id.btnGastosComCarro);
-        //buttonTutorial = findViewById(R.id.btnTutorial);
+        buttonTutorial = findViewById(R.id.btnTutorial);
 
         buttonAlcoolOuGasolina.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,12 +50,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        buttonTutorial.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(getApplicationContext(), GastoComOCarroActivity.class);
-//                startActivity(intent);
-//            }
-//        });
+        buttonTutorial.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), TutorialActivity.class);
+                startActivity(intent);
+            }
+        });
    }
 }
