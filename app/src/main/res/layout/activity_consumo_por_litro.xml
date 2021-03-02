@@ -87,33 +87,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayoutKm"
-        android:layout_width="240dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:hint="Digite os Quilômetro"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textViewKm"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutLitros">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/TextInputEditTextKm"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/white"
-            android:digits="0123456789.,"
-            android:imeOptions="actionNext"
-            android:inputType="numberDecimal"
-            android:maxLines="1"
-            android:textSize="18sp"
-            android:visibility="visible" />
-    </com.google.android.material.textfield.TextInputLayout>
-
     <TextView
         android:id="@+id/textViewLitros"
         android:layout_width="60dp"
@@ -131,7 +104,7 @@
         android:id="@+id/textViewKm"
         android:layout_width="60dp"
         android:layout_height="34dp"
-        android:layout_marginTop="23dp"
+        android:layout_marginTop="30dp"
         android:layout_marginBottom="40dp"
         android:background="@android:color/holo_orange_light"
         android:gravity="center"
@@ -175,24 +148,43 @@
         android:id="@+id/textInputLayoutLitros"
         android:layout_width="240dp"
         android:layout_height="60dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="72dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
         android:hint="Digite os Litros"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textViewLitros"
         app:layout_constraintTop_toTopOf="@+id/guideline">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/TextInputEditTextLitros"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/white"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
             android:digits="0123456789.,"
             android:imeOptions="actionNext"
+            android:maxLines="1"
+            android:textSize="18sp"
+            android:visibility="visible" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutKm"
+        android:layout_width="240dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:hint="Digite os Quilômetros"
+        app:layout_constraintStart_toEndOf="@+id/textViewKm"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutLitros">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/TextInputEditTextKm"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
             android:inputType="numberDecimal"
+            android:digits="0123456789.,"
+            android:imeOptions="actionNext"
             android:maxLines="1"
             android:textSize="18sp"
             android:visibility="visible" />

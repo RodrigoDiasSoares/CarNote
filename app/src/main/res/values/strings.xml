@@ -17,6 +17,7 @@
     <string name="_11200_00">11200,00</string>
     <string name="todo">TODO</string>
     <string name="carnote">CarNote</string>
+    <string name="dotted">&#8226;</string>
     <string name="tutorial_alcool_ou_gasolina">Alcool ou Gasolina</string>
     <string name="tutorial_consumo_por_litro">Consumo por litro</string>
     <string name="tutorial_gastos_com_carro">Gastos com Carro</string>

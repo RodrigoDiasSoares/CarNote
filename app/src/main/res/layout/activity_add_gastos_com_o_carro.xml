@@ -109,6 +109,7 @@
             android:id="@+id/textInputEditTextPreco"
             android:layout_width="240dp"
             android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
             android:digits="0123456789.,"
             android:imeOptions="actionNext"
             android:maxLines="1"
