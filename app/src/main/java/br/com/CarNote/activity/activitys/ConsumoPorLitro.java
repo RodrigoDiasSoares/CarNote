@@ -1,11 +1,15 @@
 package br.com.CarNote.activity.activitys;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,14 +24,17 @@ import com.google.android.gms.ads.initialization.OnInitializationCompleteListene
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.text.DecimalFormat;
+
 import br.com.CarNote.R;
 
 public class ConsumoPorLitro extends AppCompatActivity {
-    private TextInputEditText editTextkm;
-    private TextInputEditText editTextLitros;
+    private EditText editTextkm;
+    private EditText editTextLitros;
     private TextInputLayout textInputLayoutLitros;
     private TextInputLayout textInputLayoutKm;
     private Button buttonCalcularKmPorLitro;
+    private Dialog dialog;
     private AdView mAdView;
 
     private FragmentPagerAdapter adapterViewPager;
@@ -42,6 +49,7 @@ public class ConsumoPorLitro extends AppCompatActivity {
         textInputLayoutLitros = findViewById(R.id.textInputLayoutLitros);
         buttonCalcularKmPorLitro = findViewById(R.id.buttonCalcularConsumo);
         mAdView = findViewById(R.id.adViewConsumoPorLitro);
+        dialog = new Dialog(this);
 
 
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
@@ -106,11 +114,13 @@ public class ConsumoPorLitro extends AppCompatActivity {
     public void equação(String litros, String km) {
         double valorlitros = Double.parseDouble(litros);
         double valorKm = Double.parseDouble(km);
-        double resultado = valorKm / valorlitros;
+        Double resultadoEquacao = valorKm / valorlitros;
 
-        Intent intent = new Intent(getBaseContext(), ConsumoPorLitroResoltado.class);
-        intent.putExtra("resultado", resultado);
-        startActivity(intent);
+//        Intent intent = new Intent(getBaseContext(), ConsumoPorLitroResultado.class);
+//        intent.putExtra("resultado", resultado);
+//        startActivity(intent);
+        DecimalFormat df = new DecimalFormat("#,###.00");
+        resultado(df.format(resultadoEquacao));
 
     }
 
@@ -131,6 +141,13 @@ public class ConsumoPorLitro extends AppCompatActivity {
         }
 
         return camposValidos;
+    }
+    public void resultado(String consumo){
+        dialog.setContentView(R.layout.popup_consumo);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        TextView textView = dialog.findViewById(R.id.textViewPopupConsumo);
+        textView.setText(consumo);
+        dialog.show();
     }
 
 

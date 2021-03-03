@@ -1,5 +1,6 @@
 package br.com.CarNote.activity.activitys;
 
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
@@ -33,10 +34,12 @@ public class GastoComOCarroActivity extends AppCompatActivity {
     private AdapterGastos adapter;
     private List<Gastos> listaGastos = new ArrayList<>();
     private Gastos gastoSelecionado;
+    private Dialog dialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gasto_com_o_carro);
+        dialog = new Dialog(this);
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.addOnItemTouchListener(
                 new RecyclerItemClickListener(
@@ -112,6 +115,9 @@ public class GastoComOCarroActivity extends AppCompatActivity {
     protected void onStart() {
         carregarLista();
         super.onStart();
+    }
+    public void addNovoGasto(){
+        dialog.setContentView(R.layout.popup_add_gasto);
     }
 
 }

@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 import br.com.CarNote.R;
@@ -33,7 +34,7 @@ public class AdapterGastos extends RecyclerView.Adapter<AdapterGastos.MyViewHold
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Gastos gastos = gastosList.get(position);
         holder.itenList.setText(gastos.getTitulo());
-        holder.preco.setText(String.valueOf(gastos.getPreco()));
+        holder.preco.setText(gastos.getPreco());
         holder.data.setText(gastos.getData());
         Log.i("tarefaAdapter", gastos.getTitulo());
     }

@@ -1,14 +1,18 @@
 package br.com.CarNote.activity.activitys;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import android.content.Intent;
+import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,15 +27,16 @@ import com.google.android.material.textfield.TextInputLayout;
 import br.com.CarNote.R;
 
 public class AlcoolOuGasolina extends AppCompatActivity {
-    private TextInputEditText editTextGasolina;
-    private TextInputEditText editTextAlcool;
+    private EditText editTextGasolina;
+    private EditText editTextAlcool;
     private TextInputLayout textInputLayoutGasolina;
     private TextInputLayout textInputLayoutAcool;
+    private Dialog dialog;
     private Button buttonCalcular;
     private AdView mAdView;
+    private TextView textViewResultado;
 
 
-    private FragmentPagerAdapter adapterViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +47,10 @@ public class AlcoolOuGasolina extends AppCompatActivity {
         textInputLayoutGasolina = findViewById(R.id.textInputLayoutGasolina);
         textInputLayoutAcool = findViewById(R.id.textInputLayoutAlcool);
         buttonCalcular = findViewById(R.id.buttonCalcularAlcoolOuGasolina);
+
+
+        dialog = new Dialog(this);
+
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
             public void onInitializationComplete(InitializationStatus initializationStatus) {
@@ -77,6 +86,7 @@ public class AlcoolOuGasolina extends AppCompatActivity {
         buttonCalcular.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 calcularPreco(v);
             }
         });
@@ -105,21 +115,23 @@ public class AlcoolOuGasolina extends AppCompatActivity {
         }
     }
     public void equação(String precoAlcool, String precoGasolina){
+
         double valorAlcool = Double.parseDouble(precoAlcool);
         double valorGasolina = Double.parseDouble(precoGasolina);
         double valorBase = valorGasolina * 0.7;
 
+        String combustivel;
 
         if(valorAlcool <= valorBase){
 
-            Intent intent = new Intent(getBaseContext(), AlcoolOuGasolinaResoltado.class);
-            intent.putExtra("combustivel","Álcool");
-            startActivity(intent);
+            combustivel = "Álcool";
+
+            resultado(combustivel);
         }else{
 
-            Intent intent = new Intent(getBaseContext(),AlcoolOuGasolinaResoltado.class);
-            intent.putExtra("combustivel","Gasolina");
-            startActivity(intent);
+            combustivel = "Gasolina";
+
+            resultado(combustivel);
         }
     }
 
@@ -148,6 +160,15 @@ public class AlcoolOuGasolina extends AppCompatActivity {
         }
 
         return camposValidos;
+    }
+    public void resultado(String combustivel){
+        dialog.setContentView(R.layout.popup_gasolina);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        textViewResultado = dialog.findViewById(R.id.textViewPopup);
+        textViewResultado.setText(combustivel);
+
+        dialog.show();
+
     }
 
 

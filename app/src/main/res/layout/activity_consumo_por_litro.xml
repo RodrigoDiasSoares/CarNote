@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".activity.activitys.AlcoolOuGasolina">
 
 
@@ -78,11 +79,11 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
+        android:background="@drawable/shape_degrade"
         android:text="Calcular"
+        android:textColor="#ffff"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:textColor="#ffff"
-        android:background="@drawable/shape_degrade"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2" />
@@ -155,16 +156,13 @@
         app:layout_constraintStart_toEndOf="@+id/textViewLitros"
         app:layout_constraintTop_toTopOf="@+id/guideline">
 
-        <com.google.android.material.textfield.TextInputEditText
+        <me.abhinay.input.CurrencyEditText
             android:id="@+id/TextInputEditTextLitros"
-            android:layout_width="240dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="numberDecimal"
-            android:digits="0123456789.,"
-            android:imeOptions="actionNext"
-            android:maxLines="1"
-            android:textSize="18sp"
-            android:visibility="visible" />
+            android:textColor="@color/dark_gray"
+            android:inputType="number"
+            android:textSize="24sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -178,16 +176,13 @@
         app:layout_constraintStart_toEndOf="@+id/textViewKm"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayoutLitros">
 
-        <com.google.android.material.textfield.TextInputEditText
+        <me.abhinay.input.CurrencyEditText
             android:id="@+id/TextInputEditTextKm"
-            android:layout_width="240dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="numberDecimal"
-            android:digits="0123456789.,"
-            android:imeOptions="actionNext"
-            android:maxLines="1"
-            android:textSize="18sp"
-            android:visibility="visible" />
+            android:textColor="@color/dark_gray"
+            android:inputType="number"
+            android:textSize="24sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.constraintlayout.widget.Guideline

@@ -1,21 +1,23 @@
 package br.com.CarNote.activity.activitys;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
 import android.app.DatePickerDialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.Toast;
+
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.io.Console;
 import java.text.DateFormat;
 import java.util.Calendar;
 
@@ -26,7 +28,7 @@ import br.com.CarNote.activity.model.Gastos;
 
 public class AddGastosComOCarroActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener{
     private TextInputEditText editTextGasto;
-    private TextInputEditText editTextPreco;
+    private EditText editTextPreco;
     private TextInputEditText editTextData;
     private TextInputLayout textInputLayoutGasto;
     private TextInputLayout textInputLayoutPreco;
@@ -37,7 +39,8 @@ public class AddGastosComOCarroActivity extends AppCompatActivity implements Dat
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_gastos_com_o_carro);
+        setContentView(R.layout.popup_add_gasto);
+        super.getWindow().setBackgroundDrawable(new ColorDrawable(Color.GRAY));
         editTextGasto = findViewById(R.id.textInputEditTextGasto);
         editTextPreco = findViewById(R.id.textInputEditTextPreco);
         editTextData = findViewById(R.id.textInputEditTextData);
@@ -47,6 +50,7 @@ public class AddGastosComOCarroActivity extends AppCompatActivity implements Dat
         salvar = findViewById(R.id.buttonSalvarGasto);
 
         editGasto = (Gastos) getIntent().getSerializableExtra("gastoSelecionado");
+
         if(editGasto != null) {
             editTextGasto.setText(editGasto.getTitulo());
             editTextPreco.setText(String.valueOf(editGasto.getPreco()));
@@ -164,14 +168,7 @@ public class AddGastosComOCarroActivity extends AppCompatActivity implements Dat
 
         gastos.setTitulo(tituloGasto);
         gastos.setData(data);
-        try {
-            gastos.setPreco(Double.parseDouble(preco));
-
-        }catch (NumberFormatException e){
-            preco = preco.replace(',','.');
-            gastos.setPreco(Double.parseDouble(preco));
-        }
-
+        gastos.setPreco(preco);
 
         return gastos;
     }
