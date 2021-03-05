@@ -25,10 +25,12 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
 import br.com.CarNote.R;
+import me.abhinay.input.CurrencyEditText;
+
 
 public class AlcoolOuGasolina extends AppCompatActivity {
-    private EditText editTextGasolina;
-    private EditText editTextAlcool;
+    private CurrencyEditText editTextGasolina;
+    private CurrencyEditText editTextAlcool;
     private TextInputLayout textInputLayoutGasolina;
     private TextInputLayout textInputLayoutAcool;
     private Dialog dialog;
@@ -47,7 +49,7 @@ public class AlcoolOuGasolina extends AppCompatActivity {
         textInputLayoutGasolina = findViewById(R.id.textInputLayoutGasolina);
         textInputLayoutAcool = findViewById(R.id.textInputLayoutAlcool);
         buttonCalcular = findViewById(R.id.buttonCalcularAlcoolOuGasolina);
-
+        editTextAlcool.setSpacing(false);
 
         dialog = new Dialog(this);
 
@@ -94,8 +96,10 @@ public class AlcoolOuGasolina extends AppCompatActivity {
     }
 
     public void calcularPreco(View view){
+
         String precoAlcool = editTextAlcool.getText().toString();
         String precoGasolina = editTextGasolina.getText().toString();
+
 
         if(validarCampos(precoAlcool, precoGasolina)){
             try {
@@ -115,6 +119,18 @@ public class AlcoolOuGasolina extends AppCompatActivity {
         }
     }
     public void equação(String precoAlcool, String precoGasolina){
+
+        // verificação nescessaria devido a um espaço que vem no inicio do input
+
+        if ( !Character.isDigit(precoAlcool.charAt(0)) ) {
+
+            precoAlcool = precoAlcool.substring (1);
+        }
+        if ( !Character.isDigit(precoGasolina.charAt(0)) ) {
+            precoGasolina = precoGasolina.substring (1);
+        }
+
+        // fim da verificação
 
         double valorAlcool = Double.parseDouble(precoAlcool);
         double valorGasolina = Double.parseDouble(precoGasolina);
@@ -144,6 +160,7 @@ public class AlcoolOuGasolina extends AppCompatActivity {
             textInputLayoutAcool.setError("!");
             camposValidos = false;
 
+
         }else{
 
             textInputLayoutAcool.setErrorEnabled(false);
@@ -153,6 +170,7 @@ public class AlcoolOuGasolina extends AppCompatActivity {
 
             textInputLayoutGasolina.setError("!");
             camposValidos = false;
+
 
         }else{
 

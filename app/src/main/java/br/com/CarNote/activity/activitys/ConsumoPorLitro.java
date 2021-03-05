@@ -112,13 +112,23 @@ public class ConsumoPorLitro extends AppCompatActivity {
     }
 
     public void equação(String litros, String km) {
+        // verificação nescessaria devido a um espaço que vem no inicio do input
+
+        if ( !Character.isDigit(litros.charAt(0)) ) {
+
+            litros = litros.substring (1);
+        }
+        if ( !Character.isDigit(km.charAt(0)) ) {
+            km = km.substring (1);
+        }
+
+        // fim da verificação
+
         double valorlitros = Double.parseDouble(litros);
         double valorKm = Double.parseDouble(km);
         Double resultadoEquacao = valorKm / valorlitros;
 
-//        Intent intent = new Intent(getBaseContext(), ConsumoPorLitroResultado.class);
-//        intent.putExtra("resultado", resultado);
-//        startActivity(intent);
+
         DecimalFormat df = new DecimalFormat("#,###.00");
         resultado(df.format(resultadoEquacao));
 

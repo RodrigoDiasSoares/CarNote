@@ -30,6 +30,8 @@
             android:id="@+id/textInputEditTextGasto"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:maxLength="30"
+            android:maxLines="1"
             android:textColor="@color/dark_gray"
             android:imeOptions="actionNext" />
 
@@ -85,6 +87,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/dark_gray"
             android:inputType="number"
+            android:maxLength="11"
             android:textSize="24sp" />
 
     </com.google.android.material.textfield.TextInputLayout>

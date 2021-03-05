@@ -34,7 +34,11 @@ public class AdapterGastos extends RecyclerView.Adapter<AdapterGastos.MyViewHold
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Gastos gastos = gastosList.get(position);
         holder.itenList.setText(gastos.getTitulo());
-        holder.preco.setText(gastos.getPreco());
+
+        String formatPreco = "R$ "+String.valueOf(gastos.getPreco());
+        formatPreco = formatPreco.replace(".",",");
+
+        holder.preco.setText(formatPreco);
         holder.data.setText(gastos.getData());
         Log.i("tarefaAdapter", gastos.getTitulo());
     }

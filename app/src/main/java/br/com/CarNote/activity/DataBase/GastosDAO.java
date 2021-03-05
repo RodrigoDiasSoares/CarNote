@@ -82,7 +82,7 @@ public class GastosDAO implements iGastosDAO{
             Gastos gastos = new Gastos();
             Long id = cursor.getLong(cursor.getColumnIndex("id"));
             String tituloGasto = cursor.getString(cursor.getColumnIndex("titulo"));
-            String precoGasto = cursor.getString(cursor.getColumnIndex("preco"));
+            double precoGasto = cursor.getDouble(cursor.getColumnIndex("preco"));
             String data = cursor.getString(cursor.getColumnIndex("data"));
             gastos.setId(id);
             gastos.setTitulo(tituloGasto);

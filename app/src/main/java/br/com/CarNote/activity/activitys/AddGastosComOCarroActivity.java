@@ -74,11 +74,26 @@ public class AddGastosComOCarroActivity extends AppCompatActivity implements Dat
                 Gastos gastos = new Gastos();
                 if(editGasto != null){
                     String tituloGasto = editTextGasto.getText().toString();
-                    Double preco = Double.parseDouble(editTextPreco.getText().toString());
                     String data = editTextData.getText().toString();
+                    double preco = 0;
+                    String correcaoPreco = editTextPreco.getText().toString();
 
-                    if(validarCampos(tituloGasto,preco.toString(),data)){
-                        gastos = salvarGasto(tituloGasto,preco.toString(),data);
+
+                    // verificação nescessaria devido a um espaço que vem no inicio do input
+
+                    if ( !Character.isDigit(correcaoPreco.charAt(0)) ) {
+                        correcaoPreco = correcaoPreco.replace(',','.');
+                        preco = Double.parseDouble(correcaoPreco.substring(1));
+                    }else{
+                        correcaoPreco = correcaoPreco.replace(',','.');
+                        preco = Double.parseDouble(correcaoPreco);
+                    }
+
+                    // fim da verificação
+
+
+                    if(validarCampos(tituloGasto,preco,data)){
+                        gastos = salvarGasto(tituloGasto,preco,data);
                         gastos.setId(editGasto.getId());
                         if(gastosDAO.atualizar(gastos)){
 
@@ -99,10 +114,25 @@ public class AddGastosComOCarroActivity extends AppCompatActivity implements Dat
                 }else{
 
                     String tituloGasto = editTextGasto.getText().toString();
+                    double preco = 0;
+                    String correcaoPreco = editTextPreco.getText().toString();
 
 
-                    if(validarCampos(tituloGasto,editTextPreco.getText().toString(),data)){
-                        gastos = salvarGasto(tituloGasto,editTextPreco.getText().toString(),data);
+                    // verificação nescessaria devido a um espaço que vem no inicio do input
+
+                    if ( !Character.isDigit(correcaoPreco.charAt(0)) ) {
+//                        if(correcaoPreco.length()> 5){
+//                            correcaoPreco = correcaoPreco.substring(0,correcaoPreco.length() - 6);
+//                        }
+                        correcaoPreco = correcaoPreco.replace(',','.');
+                        preco = Double.parseDouble(correcaoPreco.substring(1));
+                    }
+
+                    // fim da verificação
+
+
+                    if(validarCampos(tituloGasto,preco,data)){
+                        gastos = salvarGasto(tituloGasto,preco,data);
 
                         if (gastosDAO.salvar(gastos)){
                             finish();
@@ -132,12 +162,15 @@ public class AddGastosComOCarroActivity extends AppCompatActivity implements Dat
         c.set(Calendar.YEAR, i);
         c.set(Calendar.MONTH, i1);
         c.set(Calendar.DAY_OF_MONTH, i2);
-        data = DateFormat.getDateInstance(DateFormat.DEFAULT).format(c.getTime());
+        data = String.valueOf(c.get(Calendar.DAY_OF_MONTH)) + "/"
+                + String.valueOf(c.get(Calendar.MONTH)) + "/"
+                + String.valueOf(c.get(Calendar.YEAR));
+                //DateFormat.getDateInstance(DateFormat.DEFAULT).format(c.getTime());
         editTextData.setText(data);
 
 
     }
-    public boolean validarCampos(String editGastos, String editPreco, String editData){
+    public boolean validarCampos(String editGastos, Double editPreco, String editData){
         boolean camposValidos = true;
 
         if(editGastos.equals("")){
@@ -163,7 +196,7 @@ public class AddGastosComOCarroActivity extends AppCompatActivity implements Dat
         return camposValidos;
 
     }
-    public Gastos salvarGasto(String tituloGasto, String preco, String data){
+    public Gastos salvarGasto(String tituloGasto, double preco, String data){
         Gastos gastos = new Gastos();
 
         gastos.setTitulo(tituloGasto);

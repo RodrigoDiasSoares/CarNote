@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class Gastos implements Serializable {
     private Long id;
     private String titulo;
-    private String preco;
+    private double preco;
     private String data;
 
     public Gastos() {
@@ -28,11 +28,11 @@ public class Gastos implements Serializable {
         this.titulo = titulo;
     }
 
-    public String getPreco() {
+    public double getPreco() {
         return preco;
     }
 
-    public void setPreco(String preco) {
+    public void setPreco(double preco) {
         this.preco = preco;
     }
 
