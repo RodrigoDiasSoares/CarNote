@@ -33,7 +33,7 @@
         android:layout_height="0dp"
         android:layout_marginTop="104dp"
         android:fontFamily="@font/sura_bold"
-        android:text="Consumo"
+        android:text="@string/ResultadoAlcoolEConsumo"
         android:textColor="#FFFFFF"
         android:textSize="50sp"
         android:textStyle="bold"
@@ -66,7 +66,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textViewPopup"
+
+        app:layout_constraintTop_toTopOf="parent"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/fuel2"

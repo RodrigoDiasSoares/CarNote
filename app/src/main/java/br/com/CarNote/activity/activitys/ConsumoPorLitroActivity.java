@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -28,7 +29,7 @@ import java.text.DecimalFormat;
 
 import br.com.CarNote.R;
 
-public class ConsumoPorLitro extends AppCompatActivity {
+public class ConsumoPorLitroActivity extends AppCompatActivity {
     private EditText editTextkm;
     private EditText editTextLitros;
     private TextInputLayout textInputLayoutLitros;
@@ -52,15 +53,13 @@ public class ConsumoPorLitro extends AppCompatActivity {
         dialog = new Dialog(this);
 
 
-        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+
+        new Handler().postDelayed(new Runnable() {
             @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            public void run() {
+                carregarBanner();
             }
-        });
-
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
-
+        }, 1000);
 
         editTextLitros.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
@@ -158,6 +157,16 @@ public class ConsumoPorLitro extends AppCompatActivity {
         TextView textView = dialog.findViewById(R.id.textViewPopupConsumo);
         textView.setText(consumo);
         dialog.show();
+    }
+    public void carregarBanner(){
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
     }
 
 

@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 
 import br.com.CarNote.R;
 
@@ -28,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         buttonAlcoolOuGasolina.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), AlcoolOuGasolina.class);
+                Intent intent = new Intent(getApplicationContext(), AlcoolOuGasolinaActivity.class);
                 startActivity(intent);
             }
         });
@@ -37,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         buttonConsumoPorLitro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, ConsumoPorLitro.class);
+                Intent intent = new Intent(MainActivity.this, ConsumoPorLitroActivity.class);
                 startActivity(intent);
             }
         });

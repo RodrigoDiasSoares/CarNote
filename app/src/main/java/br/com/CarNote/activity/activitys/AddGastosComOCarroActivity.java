@@ -73,63 +73,13 @@ public class AddGastosComOCarroActivity extends AppCompatActivity implements Dat
                 GastosDAO gastosDAO = new GastosDAO(getApplicationContext());
                 Gastos gastos = new Gastos();
                 if(editGasto != null){
-                    String tituloGasto = editTextGasto.getText().toString();
-                    String data = editTextData.getText().toString();
-                    double preco = 0;
-                    String correcaoPreco = editTextPreco.getText().toString();
 
+                    editarGasto(gastos,gastosDAO);
 
-                    // verificação nescessaria devido a um espaço que vem no inicio do input
-
-                    if ( !Character.isDigit(correcaoPreco.charAt(0)) ) {
-                        correcaoPreco = correcaoPreco.replace(',','.');
-                        preco = Double.parseDouble(correcaoPreco.substring(1));
-                    }else{
-                        correcaoPreco = correcaoPreco.replace(',','.');
-                        preco = Double.parseDouble(correcaoPreco);
-                    }
-
-                    // fim da verificação
-
-
-                    if(validarCampos(tituloGasto,preco,data)){
-                        gastos = salvarGasto(tituloGasto,preco,data);
-                        gastos.setId(editGasto.getId());
-                        if(gastosDAO.atualizar(gastos)){
-
-                            finish();
-                            Toast.makeText(getApplicationContext(),
-                                    "Sucesso ao atualizar a Tarefa",
-                                    Toast.LENGTH_SHORT).show();
-                        }else{
-                            Toast.makeText(getApplicationContext(),
-                                    "Erro ao atualizar a Tarefa",
-                                    Toast.LENGTH_SHORT).show();
-                        }
-                    }else{
-                        Toast.makeText(getApplicationContext(),
-                                "Preencha os campos",
-                                Toast.LENGTH_SHORT).show();
-                    }
                 }else{
 
                     String tituloGasto = editTextGasto.getText().toString();
-                    double preco = 0;
-                    String correcaoPreco = editTextPreco.getText().toString();
-
-
-                    // verificação nescessaria devido a um espaço que vem no inicio do input
-
-                    if ( !Character.isDigit(correcaoPreco.charAt(0)) ) {
-//                        if(correcaoPreco.length()> 5){
-//                            correcaoPreco = correcaoPreco.substring(0,correcaoPreco.length() - 6);
-//                        }
-                        correcaoPreco = correcaoPreco.replace(',','.');
-                        preco = Double.parseDouble(correcaoPreco.substring(1));
-                    }
-
-                    // fim da verificação
-
+                    double preco = correcaoPreco();
 
                     if(validarCampos(tituloGasto,preco,data)){
                         gastos = salvarGasto(tituloGasto,preco,data);
@@ -165,7 +115,7 @@ public class AddGastosComOCarroActivity extends AppCompatActivity implements Dat
         data = String.valueOf(c.get(Calendar.DAY_OF_MONTH)) + "/"
                 + String.valueOf(c.get(Calendar.MONTH)) + "/"
                 + String.valueOf(c.get(Calendar.YEAR));
-                //DateFormat.getDateInstance(DateFormat.DEFAULT).format(c.getTime());
+
         editTextData.setText(data);
 
 
@@ -204,6 +154,49 @@ public class AddGastosComOCarroActivity extends AppCompatActivity implements Dat
         gastos.setPreco(preco);
 
         return gastos;
+    }
+    public void editarGasto(Gastos gastos, GastosDAO gastosDAO){
+        String tituloGasto = editTextGasto.getText().toString();
+        String data = editTextData.getText().toString();
+        double preco = correcaoPreco();
+
+        if(validarCampos(tituloGasto,preco,data)){
+            gastos = salvarGasto(tituloGasto,preco,data);
+            gastos.setId(editGasto.getId());
+            if(gastosDAO.atualizar(gastos)){
+
+                finish();
+                Toast.makeText(getApplicationContext(),
+                        "Sucesso ao atualizar a Tarefa",
+                        Toast.LENGTH_SHORT).show();
+            }else{
+                Toast.makeText(getApplicationContext(),
+                        "Erro ao atualizar a Tarefa",
+                        Toast.LENGTH_SHORT).show();
+            }
+        }else{
+            Toast.makeText(getApplicationContext(),
+                    "Preencha os campos",
+                    Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public double correcaoPreco(){
+        double preco = 0;
+        String correcaoPreco = editTextPreco.getText().toString();
+
+
+        // verificação nescessaria devido a um espaço que vem no inicio do input
+
+        if ( !Character.isDigit(correcaoPreco.charAt(0)) ) {
+            correcaoPreco = correcaoPreco.replace(".","");
+            correcaoPreco = correcaoPreco.replace(',','.');
+            preco = Double.parseDouble(correcaoPreco.substring(1));
+        }
+
+        // fim da verificação
+
+        return preco;
     }
 
 }

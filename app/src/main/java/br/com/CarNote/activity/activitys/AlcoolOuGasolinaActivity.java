@@ -5,9 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -28,7 +30,7 @@ import br.com.CarNote.R;
 import me.abhinay.input.CurrencyEditText;
 
 
-public class AlcoolOuGasolina extends AppCompatActivity {
+public class AlcoolOuGasolinaActivity extends AppCompatActivity {
     private CurrencyEditText editTextGasolina;
     private CurrencyEditText editTextAlcool;
     private TextInputLayout textInputLayoutGasolina;
@@ -53,16 +55,12 @@ public class AlcoolOuGasolina extends AppCompatActivity {
 
         dialog = new Dialog(this);
 
-        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+        new Handler().postDelayed(new Runnable() {
             @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            public void run() {
+                carregarBanner();
             }
-        });
-
-        mAdView = findViewById(R.id.adViewAlcoolOuGasolina);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
-
+        }, 1000);
 
 
         editTextAlcool.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -187,6 +185,17 @@ public class AlcoolOuGasolina extends AppCompatActivity {
 
         dialog.show();
 
+    }
+    public void carregarBanner(){
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+
+        mAdView = findViewById(R.id.adViewAlcoolOuGasolina);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
     }
 
 

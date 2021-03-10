@@ -1,32 +1,103 @@
 <resources>
-    <string name="app_name">CarNote</string>
-    <string name="resultado2">Resultado</string>
-    <string name="slide"> teste</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_gasto_com_o_carro">GastoComOCarroActivity</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="textview">TextView</string>
-    <string name="_11200_00">11200,00</string>
-    <string name="todo">TODO</string>
-    <string name="carnote">CarNote</string>
+    <!-- Strings used for System -->
+    <string name="app_name">CarNote</string>
+    <string name="title_activity_gasto_com_o_carro">Gastos com o Carro</string>
+    <string name="tutorial_gasto_com_o_carro_menu">Gastos com o Carro</string>
+    <string name="tutorial_alcool_ou_gasolina_resultado">Álcool ou Gasolina</string>
+    <string name="tutorial_consumo_por_litro_resultado">Consumo por Litro</string>
+
+
+
+    <!-- Strings used for activity_main -->
+    <string name="descAlcool">Calcular álcool ou gasolina</string>
+    <string name="descConsumo">Calcular consumo or litro</string>
+    <string name="descGastos">Gastos com Carro</string>
+    <string name="descTutorial">Tutorial</string>
+
+    <!-- Strings used for activity_alcool_ou_gasolina -->
+    <string name="gasolina">Gasolina</string>
+    <string name="alcool">Álcool</string>
+    <string name="exAlcool">Ex:3,80</string>
+    <string name="exGasolina">Ex:4,99</string>
+
+    <!-- Strings used for activity_consumo_por_litro -->
+    <string name="km">Km</string>
+    <string name="litros">Litros</string>
+    <string name="exKm">Ex:25,00</string>
+    <string name="exLitros">Ex:5,00</string>
+    <string name="calcular">Calcular</string>
+
+    <!-- Strings used for activity_gastos_com_o_carro -->
+    <string name="botaoAdd">Adicionar gasto</string>
+
+    <!-- Strings used for activity_tutorial -->
+    <string name="proximo">Próximo</string>
+    <string name="pular">pular</string>
     <string name="dotted">&#8226;</string>
+
+    <!-- Strings used for adapter_gastos -->
+    <string name="titulo">Titulo</string>
+    <string name="preco">11200,00</string>
+    <string name="data">11/03/2021</string>
+
+    <!-- Strings used for popup_add_gastos -->
+    <string name="tituloData">Data</string>
+    <string name="tituloPreco">Preço</string>
+    <string name="salvar">Salvar</string>
+    <string name="novoGasto">Novo Gasto</string>
+
+    <!-- Strings used for popup_consumo e popup_gasolina -->
+    <string name="ResultadoAlcoolEConsumo">Resultado</string>
+
+    <!-- Strings used for img all tutoriais -->
+    <string name="descImg">Ilustração</string>
+
+    <!-- Strings used for tutorial_alcool_ou_gasolina -->
     <string name="tutorial_alcool_ou_gasolina">Alcool ou Gasolina</string>
+    <string name="text_alcool_ou_gasolina">
+        Ao colocar os valores, é realizado o
+        <br/>calculo para ver qual combustivel
+        <br/>tem o maior custo benefico no momento.</string>
+
+    <!-- Strings used for tutorial_alcool_ou_gasolina_resultado -->
+    <string name="textAlcoolOuGasolinaResultado">
+        O álcool só é considerado custo benefio
+        se o seu valor estiver no maximo
+        70% do valor da gasolina.</string>
+
+    <!-- Strings used for tutorial_consumo_por_litro -->
     <string name="tutorial_consumo_por_litro">Consumo por litro</string>
+    <string name="textConsumo">
+        Ao colocar os valores, é realizado o calculo
+        <br/>de quantos quilometros o veiculo
+        <br/>fez por litro de combustivel.</string>
+
+    <!-- Strings used for tutorial_consumo_por_litro_resultado -->
+    <string name="TextConsumoPorLitro" formatted="true">
+        "É necessário encher o tanque e zerar
+        <br/>o odômetro do veículo, no próximo
+        <br/>abastecimento é necessário enchero
+        <br/>tanque novamente</string>
+
+    <string name="TextConsumoPorLitro2" formatted="true">
+        calcule o valor atual do odômetro
+        <br/>com a quantidade de litros resultante
+        <br/>da bomba de combustível."</string>
+
+
+    <!-- Strings used for tutorial_gastos_com_carro -->
     <string name="tutorial_gastos_com_carro">Gastos com Carro</string>
-    <string name="TextoConsumoPorLitro" formatted="true">
-        "É necessário encher o tanque e zerar<br/>
-        o odômetro do veículo, no próximo<br/>
-        abastecimento é necessário encher<br/>
-        o tanque novamente, calcule o valor<br/>
-        atual do odômetro com a quantidade<br/>
-        de litros resultante da bomba<br/>
-        de combustível."</string>
+    <string name="textAddGastos1">
+        Permite fazer uma lista de gastos
+        <br/>diretamente com o Carro.</string>
+
+    <string name="TextAddGasto2">Ao precionar o Botão Roxo,
+        <br/> é possivel adicionar um novo gasto.</string>
+
+    <!-- Strings used for tutorial_gastos_com_carro -->
+    <string name="textGastosMenu1">
+        Ao precionar um item da lista, é possivel editar ou deletar o item</string>
+
+
 </resources>

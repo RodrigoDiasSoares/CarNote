@@ -1,4 +1,4 @@
-package br.com.CarNote.activity.activitys;
+package br.com.CarNote.activity.model;
 
 import android.content.Context;
 import android.view.GestureDetector;

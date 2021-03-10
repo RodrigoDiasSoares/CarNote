@@ -31,7 +31,7 @@
         android:layout_height="0dp"
         android:layout_marginTop="104dp"
         android:fontFamily="@font/sura_bold"
-        android:text="Combustivel"
+        android:text="@string/ResultadoAlcoolEConsumo"
         android:textColor="#FFFFFF"
         android:textSize="50sp"
         android:textStyle="bold"

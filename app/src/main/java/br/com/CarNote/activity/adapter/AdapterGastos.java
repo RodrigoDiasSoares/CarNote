@@ -35,8 +35,14 @@ public class AdapterGastos extends RecyclerView.Adapter<AdapterGastos.MyViewHold
         Gastos gastos = gastosList.get(position);
         holder.itenList.setText(gastos.getTitulo());
 
-        String formatPreco = "R$ "+String.valueOf(gastos.getPreco());
+        String formatPreco = String.valueOf(gastos.getPreco());
         formatPreco = formatPreco.replace(".",",");
+
+        if(formatPreco.length() > 6){
+            int index = formatPreco.length() - 6;
+            formatPreco = formatPreco.substring(0,index) + "." + formatPreco.substring(index);
+        }
+        formatPreco = "R$ "+ formatPreco;
 
         holder.preco.setText(formatPreco);
         holder.data.setText(gastos.getData());

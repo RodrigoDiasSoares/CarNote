@@ -20,16 +20,10 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.PossanteÁlcoolOuGasolina.NoActionBar" />
         <activity
-            android:name=".activity.activitys.AlcoolOuGasolinaResultado"
+            android:name=".activity.activitys.AlcoolOuGasolinaActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.activitys.ConsumoPorLitroResultado"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".activity.activitys.AlcoolOuGasolina"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".activity.activitys.ConsumoPorLitro"
+            android:name=".activity.activitys.ConsumoPorLitroActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".activity.activitys.MainActivity"
