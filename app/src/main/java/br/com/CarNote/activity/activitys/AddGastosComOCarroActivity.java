@@ -129,7 +129,7 @@ public class AddGastosComOCarroActivity extends AppCompatActivity implements Dat
         }else{
             textInputLayoutGasto.setErrorEnabled(false);
         }
-        if(editPreco.equals("")){
+        if(editPreco.equals("") || editPreco == 0){
             textInputLayoutPreco.setError("!");
             camposValidos = false;
         }else{
@@ -187,11 +187,15 @@ public class AddGastosComOCarroActivity extends AppCompatActivity implements Dat
 
 
         // verificação nescessaria devido a um espaço que vem no inicio do input
+        try {
+            if ( !Character.isDigit(correcaoPreco.charAt(0)) ) {
+                correcaoPreco = correcaoPreco.replace(".","");
+                correcaoPreco = correcaoPreco.replace(',','.');
+                preco = Double.parseDouble(correcaoPreco.substring(1));
+            }
 
-        if ( !Character.isDigit(correcaoPreco.charAt(0)) ) {
-            correcaoPreco = correcaoPreco.replace(".","");
-            correcaoPreco = correcaoPreco.replace(',','.');
-            preco = Double.parseDouble(correcaoPreco.substring(1));
+        }catch (Exception e){
+            return preco;
         }
 
         // fim da verificação

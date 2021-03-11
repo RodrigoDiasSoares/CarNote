@@ -2,6 +2,7 @@
 
     <!-- Strings used for System -->
     <string name="app_name">CarNote</string>
+    <string name="tutorial_bem_vindo">Bem Vindo</string>
     <string name="title_activity_gasto_com_o_carro">Gastos com o Carro</string>
     <string name="tutorial_gasto_com_o_carro_menu">Gastos com o Carro</string>
     <string name="tutorial_alcool_ou_gasolina_resultado">Álcool ou Gasolina</string>
@@ -53,6 +54,11 @@
     <!-- Strings used for img all tutoriais -->
     <string name="descImg">Ilustração</string>
 
+    <!-- Strings used for tutorial_bem_vindo -->
+    <string name="bemVindo">Bem Vindo</string>
+    <string name="bemVindo2">ao</string>
+    <string name="bemVindo3">CarNote</string>
+
     <!-- Strings used for tutorial_alcool_ou_gasolina -->
     <string name="tutorial_alcool_ou_gasolina">Alcool ou Gasolina</string>
     <string name="text_alcool_ou_gasolina">
@@ -99,5 +105,9 @@
     <string name="textGastosMenu1">
         Ao precionar um item da lista, é possivel editar ou deletar o item</string>
 
+    <!-- Strings used for menu -->
+    <string name="menu_editar">Editar</string>
+    <string name="menu_deletar">Excluir</string>
+    <string name="menu_add">Click para Adicionar</string>
 
 </resources>

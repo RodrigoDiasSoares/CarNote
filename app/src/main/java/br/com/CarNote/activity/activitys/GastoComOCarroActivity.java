@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
@@ -43,8 +44,11 @@ public class GastoComOCarroActivity extends AppCompatActivity implements PopupMe
     private AdapterGastos adapter;
     private List<Gastos> listaGastos = new ArrayList<>();
     private Gastos gastoSelecionado;
+    private FloatingActionButton fab;
+    private LottieAnimationView lottieAnimationView;
     private AdView mAdView;
     private int posicao;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +56,8 @@ public class GastoComOCarroActivity extends AppCompatActivity implements PopupMe
         setContentView(R.layout.activity_gasto_com_o_carro);
 
         recyclerView = findViewById(R.id.recyclerView);
+        lottieAnimationView = findViewById(R.id.lottieAnimationViewArrow);
+        lottieAnimationView.setVisibility(View.INVISIBLE);
         mAdView = findViewById(R.id.adViewGastosComCarro);
 
         new Handler().postDelayed(new Runnable() {
@@ -86,14 +92,15 @@ public class GastoComOCarroActivity extends AppCompatActivity implements PopupMe
                 )
         );
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), AddGastosComOCarroActivity.class);
-                startActivity(intent);
-            }
+        fab = findViewById(R.id.fab);
+        fab.setFocusable(true);
+        fab.setFocusableInTouchMode(true);
+        fab.requestFocus();
+        fab.setOnClickListener(view -> {
+            Intent intent = new Intent(getApplicationContext(), AddGastosComOCarroActivity.class);
+            startActivity(intent);
         });
+
     }
     public void carregarLista(){
 
@@ -106,13 +113,16 @@ public class GastoComOCarroActivity extends AppCompatActivity implements PopupMe
         recyclerView.setAdapter(adapter);
         recyclerView.addItemDecoration(new DividerItemDecoration(getApplicationContext(), LinearLayout.VERTICAL));
         Log.e("INFO","Lista Carregada com sucesso");
+        if(listaGastos.isEmpty()){
+            lottieAnimationView.setVisibility(View.VISIBLE);
+        }else {
+            lottieAnimationView.setVisibility(View.INVISIBLE);
+        }
+
     }
 
     public void carregarBanner(){
-        MobileAds.initialize(this, new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
-            }
+        MobileAds.initialize(this, initializationStatus -> {
         });
 
         AdRequest adRequest = new AdRequest.Builder().build();
@@ -127,6 +137,7 @@ public class GastoComOCarroActivity extends AppCompatActivity implements PopupMe
         popup.inflate(R.menu.menu_lista_gastos);
         popup.show();
     }
+
 
     @Override
     protected void onStart() {

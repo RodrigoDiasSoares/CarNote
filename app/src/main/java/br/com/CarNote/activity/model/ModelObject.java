@@ -4,7 +4,9 @@ package br.com.CarNote.activity.model;
 import br.com.CarNote.R;
 
 public enum ModelObject {
-    tutorialAlcoolOuGasolina(R.string.tutorial_alcool_ou_gasolina, R.layout.tutorial_alcool_ou_gasolina),
+    tutorialBemVindo(R.string.tutorial_bem_vindo, R.layout.tutorial_bem_vindo),
+    tutorialAlcoolOuGasolina(R.string.tutorial_alcool_ou_gasolina,
+            R.layout.tutorial_alcool_ou_gasolina),
     tutorialAlcoolOuGasolinaResultado(R.string.tutorial_alcool_ou_gasolina_resultado,
             R.layout.tutorial_alcool_ou_gasolina_resultado),
     tutorialConsumoPorLitro(R.string.tutorial_consumo_por_litro, R.layout.tutorial_consumo_por_litro),

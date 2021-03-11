@@ -122,10 +122,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:lottie_autoPlay="true"
         app:lottie_loop="false"
-        app:lottie_rawRes="@raw/car2" />
+        app:lottie_rawRes="@raw/car" />
 
     <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/lottieAnimationView3"
+        android:id="@+id/lottieAnimationViewArrow"
         android:layout_width="180dp"
         android:layout_height="143dp"
         android:layout_marginTop="116dp"
@@ -136,7 +136,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:lottie_autoPlay="true"
         app:lottie_loop="false"
-        app:lottie_rawRes="@raw/map2" />
+        app:lottie_rawRes="@raw/map" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayoutLitros"

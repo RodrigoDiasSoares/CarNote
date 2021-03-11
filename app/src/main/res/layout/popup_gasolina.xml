@@ -64,7 +64,7 @@
         app:layout_constraintTop_toTopOf="@+id/textViewPopup"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
-        app:lottie_rawRes="@raw/gas_statio3"
+        app:lottie_rawRes="@raw/gas_statio"
         tools:layout_conversion_absoluteHeight="336dp"
         tools:layout_conversion_absoluteWidth="364dp" />
 

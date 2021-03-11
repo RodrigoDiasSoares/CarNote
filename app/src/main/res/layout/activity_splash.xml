@@ -1,39 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/degrade_back"
-    android:orientation="vertical"
-    tools:context="br.com.CarNote.activity.activitys.SplashActivity">
+    android:background="@drawable/degrade_bem_vindo"
+    android:orientation="vertical">
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/lottieAnimationView"
-        android:layout_width="395dp"
-        android:layout_height="266dp"
-        android:contentDescription="@string/app_name"
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="345dp"
+        android:layout_height="355dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:contentDescription="@string/descImg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="false"
-        app:lottie_rawRes="@raw/car" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="191dp"
-        android:layout_height="71dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/buttons_back_ground"
-        android:gravity="center"
-        android:text="@string/app_name"
-        android:textColor="@color/white"
-        android:textSize="36sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/lottieAnimationView" />
+        app:srcCompat="@drawable/ic_car_note" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
