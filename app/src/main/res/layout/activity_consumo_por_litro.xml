@@ -155,9 +155,9 @@
             android:id="@+id/TextInputEditTextLitros"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/dark_gray"
             android:inputType="number"
             android:maxLength="7"
+            android:textColor="@color/black"
             android:textSize="24sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -176,9 +176,9 @@
             android:id="@+id/TextInputEditTextKm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/dark_gray"
             android:inputType="number"
             android:maxLength="7"
+            android:textColor="@color/black"
             android:textSize="24sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
