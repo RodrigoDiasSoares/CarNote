@@ -7,6 +7,7 @@ import android.app.DatePickerDialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -14,6 +15,11 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -33,6 +39,8 @@ public class AddGastosComOCarroActivity extends AppCompatActivity implements Dat
     private TextInputLayout textInputLayoutGasto;
     private TextInputLayout textInputLayoutPreco;
     private TextInputLayout textInputLayoutData;
+    private AdView mAdView;
+    private AdView mAdView2;
     private Button salvar;
     private Gastos editGasto;
     private String data;
@@ -50,6 +58,13 @@ public class AddGastosComOCarroActivity extends AppCompatActivity implements Dat
         salvar = findViewById(R.id.buttonSalvarGasto);
 
         editGasto = (Gastos) getIntent().getSerializableExtra("gastoSelecionado");
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                carregarBanner();
+            }
+        }, 1000);
 
         if(editGasto != null) {
             editTextGasto.setText(editGasto.getTitulo());
@@ -201,6 +216,19 @@ public class AddGastosComOCarroActivity extends AppCompatActivity implements Dat
         // fim da verificação
 
         return preco;
+    }
+    public void carregarBanner(){
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+
+        mAdView = findViewById(R.id.adViewAddGasto);
+        mAdView2 = findViewById(R.id.adViewAddGasto2);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+        mAdView2.loadAd(adRequest);
     }
 
 }

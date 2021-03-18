@@ -37,6 +37,7 @@ public class ConsumoPorLitroActivity extends AppCompatActivity {
     private Button buttonCalcularKmPorLitro;
     private Dialog dialog;
     private AdView mAdView;
+    private AdView mAdView2;
 
     private FragmentPagerAdapter adapterViewPager;
 
@@ -50,6 +51,7 @@ public class ConsumoPorLitroActivity extends AppCompatActivity {
         textInputLayoutLitros = findViewById(R.id.textInputLayoutLitros);
         buttonCalcularKmPorLitro = findViewById(R.id.buttonCalcularConsumo);
         mAdView = findViewById(R.id.adViewConsumoPorLitro);
+        mAdView2 = findViewById(R.id.adViewConsumoPorLitro2);
         dialog = new Dialog(this);
 
 
@@ -167,6 +169,7 @@ public class ConsumoPorLitroActivity extends AppCompatActivity {
 
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
+        mAdView2.loadAd(adRequest);
     }
 
 

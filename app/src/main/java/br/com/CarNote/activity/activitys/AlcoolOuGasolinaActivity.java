@@ -38,6 +38,7 @@ public class AlcoolOuGasolinaActivity extends AppCompatActivity {
     private Dialog dialog;
     private Button buttonCalcular;
     private AdView mAdView;
+    private AdView mAdView2;
     private TextView textViewResultado;
 
 
@@ -194,8 +195,10 @@ public class AlcoolOuGasolinaActivity extends AppCompatActivity {
         });
 
         mAdView = findViewById(R.id.adViewAlcoolOuGasolina);
+        mAdView2 = findViewById(R.id.adViewAlcoolOuGasolina2);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
+        mAdView2.loadAd(adRequest);
     }
 
 

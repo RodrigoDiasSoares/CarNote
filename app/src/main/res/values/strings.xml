@@ -62,48 +62,42 @@
     <!-- Strings used for tutorial_alcool_ou_gasolina -->
     <string name="tutorial_alcool_ou_gasolina">Alcool ou Gasolina</string>
     <string name="text_alcool_ou_gasolina">
-        Ao colocar os valores, é realizado o
-        <br/>calculo para ver qual combustivel
-        <br/>tem o maior custo benefico no momento.</string>
+        Nessa função é realizado o cálculo que mostra qual combustível
+        tem o melhor custo benefício no momento.</string>
 
     <!-- Strings used for tutorial_alcool_ou_gasolina_resultado -->
     <string name="textAlcoolOuGasolinaResultado">
-        O álcool só é considerado custo benefio
-        se o seu valor estiver no maximo
-        70% do valor da gasolina.</string>
+        O álcool é considerado custo benefício se o seu valor atingir
+        até 70% do valor da gasolina, acima disso a gasolina é
+        considerada o melhor custo benefício.</string>
 
     <!-- Strings used for tutorial_consumo_por_litro -->
     <string name="tutorial_consumo_por_litro">Consumo por litro</string>
     <string name="textConsumo">
-        Ao colocar os valores, é realizado o calculo
-        <br/>de quantos quilometros o veiculo
-        <br/>fez por litro de combustivel.</string>
+        Ao colocar os valores é realizado o cálculo\n de
+        quantos quilômetros o veículo fez por\n litro de combustível.</string>
 
     <!-- Strings used for tutorial_consumo_por_litro_resultado -->
     <string name="TextConsumoPorLitro" formatted="true">
-        "É necessário encher o tanque e zerar
-        <br/>o odômetro do veículo, no próximo
-        <br/>abastecimento é necessário enchero
-        <br/>tanque novamente</string>
+        É necessário encher o tanque e zerar o odômetro do veículo,
+        no próximo abastecimento é necessário encher\n o tanque novamente.</string>
 
     <string name="TextConsumoPorLitro2" formatted="true">
-        calcule o valor atual do odômetro
-        <br/>com a quantidade de litros resultante
-        <br/>da bomba de combustível."</string>
+        Calcule o valor atual do odômetro com a quantidade de
+        litros resultante\n da bomba de combustível.</string>
 
 
     <!-- Strings used for tutorial_gastos_com_carro -->
     <string name="tutorial_gastos_com_carro">Gastos com Carro</string>
     <string name="textAddGastos1">
-        Permite fazer uma lista de gastos
-        <br/>diretamente com o Carro.</string>
+       Permite fazer uma lista de gastos\n diretamente com o carro.</string>
 
-    <string name="TextAddGasto2">Ao precionar o Botão Roxo,
-        <br/> é possivel adicionar um novo gasto.</string>
+    <string name="TextAddGasto2">
+        Ao pressionar o botão de adicionar,\n é possível adicionar um novo gasto.</string>
 
     <!-- Strings used for tutorial_gastos_com_carro -->
     <string name="textGastosMenu1">
-        Ao precionar um item da lista, é possivel editar ou deletar o item</string>
+        Ao manter pressionado um item da lista,\n é possível editar ou deletar o item.</string>
 
     <!-- Strings used for menu -->
     <string name="menu_editar">Editar</string>

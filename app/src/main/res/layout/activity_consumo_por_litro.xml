@@ -27,7 +27,7 @@
             android:layout_marginTop="16dp"
 
             android:layout_marginBottom="20dp"
-            android:text="@string/app_name"
+            android:text="@string/tutorial_consumo_por_litro"
             android:textColor="#FFFFFF"
             android:textSize="36sp"
             android:textStyle="bold" />
@@ -43,13 +43,6 @@
         app:layout_constraintGuide_begin="159dp" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="333dp" />
-
-    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -58,80 +51,89 @@
 
     <com.google.android.gms.ads.AdView
         android:id="@+id/adViewConsumoPorLitro"
-        android:layout_width="358dp"
-        android:layout_height="140dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="364dp"
+        android:layout_height="64dp"
         app:adSize="BANNER"
         app:adUnitId="ca-app-pub-9067087122803339/6354114619"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.566"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonCalcularConsumo" />
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adViewConsumoPorLitro2"
+        android:layout_width="364dp"
+        android:layout_height="64dp"
+        app:adSize="BANNER"
+        app:adUnitId="ca-app-pub-9067087122803339/8496050467"
+        app:layout_constraintBottom_toTopOf="@+id/adViewConsumoPorLitro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.638"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/buttonCalcularConsumo"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/shape_degrade"
         android:text="@string/calcular"
         android:textColor="#ffff"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutKm" />
 
     <TextView
         android:id="@+id/textViewLitros"
         android:layout_width="60dp"
         android:layout_height="34dp"
-        android:layout_marginTop="100dp"
         android:background="@android:color/holo_green_light"
         android:gravity="center"
         android:text="@string/litros"
         android:textSize="18sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/textInputLayoutLitros"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toTopOf="@+id/guideline" />
+        app:layout_constraintTop_toTopOf="@+id/textInputLayoutLitros"
+        app:layout_constraintVertical_bias="0.653" />
 
     <TextView
         android:id="@+id/textViewKm"
         android:layout_width="60dp"
         android:layout_height="34dp"
-        android:layout_marginTop="30dp"
         android:background="@android:color/holo_orange_light"
         android:gravity="center"
         android:text="@string/km"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/buttonCalcularConsumo"
+        app:layout_constraintBottom_toBottomOf="@+id/textInputLayoutKm"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/textViewLitros"
-        app:layout_constraintVertical_bias="0.142" />
+        app:layout_constraintTop_toTopOf="@+id/textInputLayoutKm"
+        app:layout_constraintVertical_bias="0.653" />
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/lottieAnimationView6"
-        android:layout_width="382dp"
-        android:layout_height="287dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginLeft="36dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="325dp"
+        android:layout_height="299dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="25dp"
         android:contentDescription="@string/app_name"
-        app:layout_constraintBottom_toTopOf="@+id/guideline2"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textViewLitros"
+        app:layout_constraintTop_toTopOf="parent"
         app:lottie_autoPlay="true"
         app:lottie_loop="false"
         app:lottie_rawRes="@raw/car" />
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/lottieAnimationViewArrow"
-        android:layout_width="180dp"
-        android:layout_height="143dp"
-        android:layout_marginTop="116dp"
+        android:layout_width="160dp"
+        android:layout_height="139dp"
+        android:layout_marginTop="120dp"
         android:contentDescription="@string/app_name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:lottie_autoPlay="true"

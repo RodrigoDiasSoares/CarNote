@@ -11,104 +11,119 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="114dp"
-        android:background="@drawable/detalhe_menu2"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content"
+        android:background="@drawable/degrade_back"
+        android:gravity="center|top"
+        android:orientation="vertical"
+        tools:context=".activity.activitys.MainActivity">
 
-        <TextView
-            android:id="@+id/textView"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="114dp"
+            android:background="@drawable/dethalhe_menu4"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="50dp"
+
+                android:layout_marginBottom="25dp"
+                android:text="@string/app_name"
+                android:textColor="#FFFFFF"
+                android:textSize="36sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayoutMenu1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="50dp"
-
-            android:layout_marginBottom="25dp"
-            android:text="@string/app_name"
-            android:textColor="#FFFFFF"
-            android:textSize="36sp"
-            android:textStyle="bold" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayoutMenu1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/buttons_back_ground"
-        android:gravity="center"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:id="@+id/btnAlcoolOuGasolina"
-            android:layout_width="140dp"
-            android:layout_height="140dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginBottom="0dp"
-            android:contentDescription="@string/descAlcool"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="20dp"
             android:background="@drawable/buttons_back_ground"
-            app:srcCompat="@drawable/button_alcool_ou_gasolina" />
+            android:gravity="center"
+            android:orientation="horizontal">
 
-        <ImageView
-            android:id="@+id/btnConsumoPorLitro"
-            android:layout_width="140dp"
-            android:layout_height="140dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginEnd="0dp"
-            android:layout_marginRight="0dp"
-            android:layout_marginBottom="0dp"
-            android:contentDescription="@string/descConsumo"
-            app:srcCompat="@drawable/button_consumo_por_litro" />
+            <ImageView
+                android:id="@+id/btnAlcoolOuGasolina"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="0dp"
+                android:background="@drawable/buttons_back_ground"
+                android:contentDescription="@string/descAlcool"
+                app:srcCompat="@drawable/button_alcool_ou_gasolina" />
 
-    </LinearLayout>
+            <ImageView
+                android:id="@+id/btnConsumoPorLitro"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                android:contentDescription="@string/descConsumo"
+                app:srcCompat="@drawable/button_consumo_por_litro" />
 
-    <LinearLayout
-        android:id="@+id/linearLayoutMenu2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="0dp"
-        android:gravity="top"
-        android:orientation="horizontal">
+        </LinearLayout>
 
-        <ImageView
-            android:id="@+id/btnGastosComCarro"
-            android:layout_width="140dp"
-            android:layout_height="140dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginBottom="0dp"
-            android:contentDescription="@string/descGastos"
-            android:background="@drawable/buttons_back_ground"
-            app:srcCompat="@drawable/button_gastos_com_carro" />
-
-        <ImageView
-            android:id="@+id/btnTutorial"
-            android:layout_width="140dp"
-            android:layout_height="140dp"
+        <LinearLayout
+            android:id="@+id/linearLayoutMenu2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_margin="0dp"
-            android:layout_marginStart="0dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginEnd="0dp"
-            android:layout_marginRight="0dp"
-            android:layout_marginBottom="0dp"
-            android:contentDescription="@string/descTutorial"
-            app:srcCompat="@drawable/button_tutorial" />
+            android:gravity="top"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/btnGastosComCarro"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="0dp"
+                android:background="@drawable/buttons_back_ground"
+                android:contentDescription="@string/descGastos"
+                app:srcCompat="@drawable/button_gastos_com_carro" />
+
+            <ImageView
+                android:id="@+id/btnTutorial"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_margin="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                android:contentDescription="@string/descTutorial"
+                app:srcCompat="@drawable/button_tutorial" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
-    <com.google.android.gms.ads.AdView
-        android:id="@+id/adViewMain"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:layout_marginTop="50dp"
-        android:foregroundGravity="bottom"
-        app:adSize="BANNER"
-        app:adUnitId="ca-app-pub-9067087122803339/3463215631" />
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
 
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adViewMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="0dp"
+            android:foregroundGravity="bottom"
+            app:adSize="BANNER"
+            app:adUnitId="ca-app-pub-9067087122803339/3463215631" />
+    </LinearLayout>
 </LinearLayout>
