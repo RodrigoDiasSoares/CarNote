@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -27,6 +28,7 @@ public class TutorialActivity extends AppCompatActivity {
         proximo = findViewById(R.id.proximo);
         pular = findViewById(R.id.pular);
         addDots(ModelObject.values().length,0);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         viewPager.setAdapter(new TutorialAdapter(this));
 

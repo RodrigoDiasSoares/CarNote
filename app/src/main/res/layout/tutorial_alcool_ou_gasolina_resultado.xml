@@ -15,7 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7"
-        app:srcCompat="@drawable/tuto_resultado_alcool" />
+        app:srcCompat="@drawable/tuto_alcool_ou_gasolina_resultado2" />
 
     <TextView
         android:id="@+id/textView3"

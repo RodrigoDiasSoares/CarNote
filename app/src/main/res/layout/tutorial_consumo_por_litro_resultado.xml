@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/degrade_back"
+    android:screenOrientation="portrait"
     android:orientation="vertical">
 
     <ImageView
@@ -14,7 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textTutoTextConsumo"
-        app:srcCompat="@drawable/tuto_resultado_consumo"
+        app:srcCompat="@drawable/tuto_consumo_por_litro_resultado2"
         android:contentDescription="@string/descImg" />
 
     <TextView

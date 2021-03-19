@@ -157,7 +157,7 @@ public class ConsumoPorLitroActivity extends AppCompatActivity {
         dialog.setContentView(R.layout.popup_consumo);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         TextView textView = dialog.findViewById(R.id.textViewPopupConsumo);
-        textView.setText(consumo);
+        textView.setText(consumo+" Km");
         dialog.show();
     }
     public void carregarBanner(){
