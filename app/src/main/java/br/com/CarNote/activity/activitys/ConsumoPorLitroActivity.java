@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.InputFilter;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -26,6 +27,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
 import java.text.DecimalFormat;
+import java.util.Locale;
 
 import br.com.CarNote.R;
 
@@ -53,7 +55,11 @@ public class ConsumoPorLitroActivity extends AppCompatActivity {
         mAdView = findViewById(R.id.adViewConsumoPorLitro);
         mAdView2 = findViewById(R.id.adViewConsumoPorLitro2);
         dialog = new Dialog(this);
-
+        Locale loc = Locale.getDefault();
+        if(loc.getLanguage() != "pt_BR"){
+            editTextkm.setFilters(new InputFilter[] { new InputFilter.LengthFilter(6) } );
+            editTextLitros.setFilters(new InputFilter[] { new InputFilter.LengthFilter(6) } );
+        }
 
 
         new Handler().postDelayed(new Runnable() {
@@ -115,12 +121,18 @@ public class ConsumoPorLitroActivity extends AppCompatActivity {
     public void equação(String litros, String km) {
         // verificação nescessaria devido a um espaço que vem no inicio do input
 
-        if ( !Character.isDigit(litros.charAt(0)) ) {
+        if ( !Character.isDigit(litros.charAt(0)) || (litros.charAt(litros.length() - 3) != '.') ) {
 
             litros = litros.substring (1);
+        }else{
+            litros = litros.replace(",","");
+
         }
-        if ( !Character.isDigit(km.charAt(0)) ) {
+        if ( !Character.isDigit(km.charAt(0)) || (km.charAt(km.length() - 3) != '.')) {
             km = km.substring (1);
+        }else{
+            km = km.replace(",","");
+
         }
 
         // fim da verificação

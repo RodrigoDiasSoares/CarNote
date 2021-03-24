@@ -34,7 +34,6 @@
     </LinearLayout>
 
 
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
         android:layout_width="wrap_content"
@@ -48,28 +47,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_begin="30dp" />
-
-    <com.google.android.gms.ads.AdView
-        android:id="@+id/adViewConsumoPorLitro"
-        android:layout_width="364dp"
-        android:layout_height="64dp"
-        app:adSize="BANNER"
-        app:adUnitId="ca-app-pub-9067087122803339/6354114619"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.566"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <com.google.android.gms.ads.AdView
-        android:id="@+id/adViewConsumoPorLitro2"
-        android:layout_width="364dp"
-        android:layout_height="64dp"
-        app:adSize="BANNER"
-        app:adUnitId="ca-app-pub-9067087122803339/8496050467"
-        app:layout_constraintBottom_toTopOf="@+id/adViewConsumoPorLitro"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.638"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/buttonCalcularConsumo"
@@ -188,4 +165,36 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_begin="395dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="513dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline5">
+
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adViewConsumoPorLitro"
+            android:layout_width="364dp"
+            android:layout_height="64dp"
+            app:adSize="BANNER"
+            app:adUnitId="ca-app-pub-9067087122803339/6354114619" />
+
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adViewConsumoPorLitro2"
+            android:layout_width="364dp"
+            android:layout_height="64dp"
+            app:adSize="BANNER"
+            app:adUnitId="ca-app-pub-9067087122803339/8496050467" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

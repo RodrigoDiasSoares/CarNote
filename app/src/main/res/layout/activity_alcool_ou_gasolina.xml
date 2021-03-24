@@ -171,24 +171,35 @@
         android:orientation="vertical"
         app:layout_constraintGuide_begin="5dp" />
 
-    <com.google.android.gms.ads.AdView
-        android:id="@+id/adViewAlcoolOuGasolina"
-        android:layout_width="357dp"
-        android:layout_height="53dp"
-        app:adSize="BANNER"
-        app:adUnitId="ca-app-pub-9067087122803339/8496050467"
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline4">
 
-    <com.google.android.gms.ads.AdView
-        android:id="@+id/adViewAlcoolOuGasolina2"
-        android:layout_width="357dp"
-        android:layout_height="53dp"
-        app:adSize="BANNER"
-        app:adUnitId="ca-app-pub-9067087122803339/1181678983"
-        app:layout_constraintBottom_toTopOf="@+id/adViewAlcoolOuGasolina"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adViewAlcoolOuGasolina"
+            android:layout_width="357dp"
+            android:layout_height="53dp"
+            app:adSize="BANNER"
+            app:adUnitId="ca-app-pub-9067087122803339/8496050467" />
+
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adViewAlcoolOuGasolina2"
+            android:layout_width="357dp"
+            android:layout_height="53dp"
+            app:adSize="BANNER"
+            app:adUnitId="ca-app-pub-9067087122803339/1181678983" />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="548dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

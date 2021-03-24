@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_app_carnote_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PossanteÁlcoolOuGasolina">
-        <activity android:name=".activity.activitys.TutorialActivity"></activity>
+        <activity android:name=".activity.activitys.TutorialActivity"
+            android:screenOrientation="portrait"></activity>
         <activity android:name=".activity.activitys.AddGastosComOCarroActivity" />
         <activity
             android:name=".activity.activitys.GastoComOCarroActivity"

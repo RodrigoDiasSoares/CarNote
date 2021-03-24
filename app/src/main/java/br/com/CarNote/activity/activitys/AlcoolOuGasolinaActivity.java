@@ -1,20 +1,17 @@
 package br.com.CarNote.activity.activitys;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentPagerAdapter;
 
 import android.app.Dialog;
-import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.InputFilter;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,6 +22,8 @@ import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+
+import java.util.Locale;
 
 import br.com.CarNote.R;
 import me.abhinay.input.CurrencyEditText;
@@ -52,9 +51,13 @@ public class AlcoolOuGasolinaActivity extends AppCompatActivity {
         textInputLayoutGasolina = findViewById(R.id.textInputLayoutGasolina);
         textInputLayoutAcool = findViewById(R.id.textInputLayoutAlcool);
         buttonCalcular = findViewById(R.id.buttonCalcularAlcoolOuGasolina);
-        editTextAlcool.setSpacing(false);
-
         dialog = new Dialog(this);
+
+        Locale loc = Locale.getDefault();
+        if(loc.getLanguage() != "pt_BR"){
+            editTextAlcool.setFilters(new InputFilter[] { new InputFilter.LengthFilter(6) } );
+            editTextGasolina.setFilters(new InputFilter[] { new InputFilter.LengthFilter(6) } );
+        }
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -121,12 +124,18 @@ public class AlcoolOuGasolinaActivity extends AppCompatActivity {
 
         // verificação nescessaria devido a um espaço que vem no inicio do input
 
-        if ( !Character.isDigit(precoAlcool.charAt(0)) ) {
+        if ( !Character.isDigit(precoAlcool.charAt(0)) || (precoAlcool.charAt(precoAlcool.length() - 3) != '.')) {
 
             precoAlcool = precoAlcool.substring (1);
+        }else{
+            precoAlcool = precoAlcool.replace(",","");
+
         }
-        if ( !Character.isDigit(precoGasolina.charAt(0)) ) {
+        if ( !Character.isDigit(precoGasolina.charAt(0)) || (precoGasolina.charAt(precoGasolina.length() - 3) != '.')) {
             precoGasolina = precoGasolina.substring (1);
+        }else{
+            precoGasolina = precoGasolina.replace(",","");
+
         }
 
         // fim da verificação

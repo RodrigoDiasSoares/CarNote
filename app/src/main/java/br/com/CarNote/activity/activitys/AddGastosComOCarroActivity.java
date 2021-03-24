@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.InputFilter;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -26,6 +27,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import java.io.Console;
 import java.text.DateFormat;
 import java.util.Calendar;
+import java.util.Locale;
 
 import br.com.CarNote.R;
 import br.com.CarNote.activity.DataBase.GastosDAO;
@@ -58,6 +60,11 @@ public class AddGastosComOCarroActivity extends AppCompatActivity implements Dat
         salvar = findViewById(R.id.buttonSalvarGasto);
 
         editGasto = (Gastos) getIntent().getSerializableExtra("gastoSelecionado");
+
+        Locale loc = Locale.getDefault();
+        if(loc.getLanguage() != "pt_BR"){
+            editTextPreco.setFilters(new InputFilter[] { new InputFilter.LengthFilter(10) } );
+        }
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -198,15 +205,20 @@ public class AddGastosComOCarroActivity extends AppCompatActivity implements Dat
 
     public double correcaoPreco(){
         double preco = 0;
+        Locale loc = Locale.getDefault();
         String correcaoPreco = editTextPreco.getText().toString();
 
 
         // verificação nescessaria devido a um espaço que vem no inicio do input
         try {
-            if ( !Character.isDigit(correcaoPreco.charAt(0)) ) {
+            if ( !Character.isDigit(correcaoPreco.charAt(0)) || (correcaoPreco.charAt(correcaoPreco.length() - 3) != '.')) {
                 correcaoPreco = correcaoPreco.replace(".","");
                 correcaoPreco = correcaoPreco.replace(',','.');
                 preco = Double.parseDouble(correcaoPreco.substring(1));
+
+            }else{
+                correcaoPreco = correcaoPreco.replace(",","");
+                preco = Double.parseDouble(correcaoPreco);
             }
 
         }catch (Exception e){
